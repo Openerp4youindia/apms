@@ -1,0 +1,119 @@
+10
+
+dir
+0
+https://github.com/Openerp4youindia/apms.git/service_repair
+https://github.com/Openerp4youindia/apms.git
+add
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+93e7cc10-059f-36af-b235-ce57b7db7bff
+
+image
+dir
+
+
+
+add
+
+report_view.xml
+file
+
+
+
+add
+
+invoice_view.xml
+file
+
+
+
+add
+
+work.png
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
+__init__.py
+file
+
+
+
+add
+
+service.py
+file
+
+
+
+add
+
+service_sequence.xml
+file
+
+
+
+add
+
+security
+dir
+
+
+
+add
+
+service_workflow.xml
+file
+
+
+
+add
+
+service_view.xml
+file
+
+
+
+add
+
+report
+dir
+
+
+
+add
+
+__openerp__.py
+file
+
+
+
+add
+

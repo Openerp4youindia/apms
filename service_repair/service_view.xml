@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    
+    		<menuitem id="sevice_repair_main_menu" name="Service Repair Order" parent="" web_icon_hover="work.png" web_icon="work.png"/>
+    		<menuitem id="sevice_repair_menu" name="Service Repair Order" parent="sevice_repair_main_menu" sequence="1"/>
+    		<menuitem id="sevice_repair_config_menu" name="Configuration" parent="sevice_repair_main_menu" sequence="2"/>
+            
+            <record model="ir.ui.view" id="order_type_tree_view">
+                <field name="name">order.type.tree</field>
+                <field name="model">order.type</field>
+                <field name="type">tree</field>
+                <field name="arch" type="xml">
+                    <tree string="Standard Problem">
+                        <field name="name"/>
+                        <field name="address_id"/>
+                    </tree>
+                </field>
+            </record>
+
+            <record model="ir.ui.view" id="order_type_form_view">
+                <field name="name">order.type.form</field>
+                <field name="model">order.type</field>
+                <field name="type">form</field>
+                <field name="arch" type="xml">
+                    <form string="Standard Problem" version="7.0">
+                    	<sheet>
+                    		<group>
+	                        <field name="name" select="1" />
+	                        <field name="address_id" select="1" />
+	                        </group>
+                        </sheet>
+                    </form>
+                </field>
+            </record>
+
+            <record model="ir.actions.act_window" id="action_order_type_tree_view">
+                <field name="name">Order Type</field>
+                <field name="type">ir.actions.act_window</field>
+                <field name="res_model">order.type</field>
+                <field name="view_type">form</field>
+                <field name="view_mode">tree,form</field>
+                <field name="view_id" ref="order_type_tree_view"/>
+            </record>
+
+			<menuitem id="order_type_menu" name="Order Type" parent="sevice_repair_config_menu" action="action_order_type_tree_view"/>
+			
+            
+            <record model="ir.ui.view" id="standard_problem_tree_view">
+                <field name="name">standard.problem.tree</field>
+                <field name="model">standard.problem</field>
+                <field name="type">tree</field>
+                <field name="arch" type="xml">
+                    <tree string="Standard Problem">
+                        <field name="name"/>
+                        <field name="description"/>
+                    </tree>
+                </field>
+            </record>
+
+            <record model="ir.ui.view" id="standard_problem_form_view">
+                <field name="name">standard.problem.form</field>
+                <field name="model">standard.problem</field>
+                <field name="type">form</field>
+                <field name="arch" type="xml">
+                    <form string="Standard Problem" version="7.0">
+                    	<sheet>
+                    		<group>
+	                        <field name="name" select="1" colspan="4"/>
+	                        <separator string="Description" colspan="4"/>
+	                        <field name="description" select="1" nolabel="1" colspan="4"/>
+	                        </group>
+                        </sheet>
+                    </form>
+                </field>
+            </record>
+
+            <record model="ir.actions.act_window" id="action_standard_problem_tree_view">
+                <field name="name">Standard Problem</field>
+                <field name="type">ir.actions.act_window</field>
+                <field name="res_model">standard.problem</field>
+                <field name="view_type">form</field>
+                <field name="view_mode">tree,form</field>
+                <field name="view_id" ref="standard_problem_tree_view"/>
+            </record>
+
+			<menuitem id="standard_problem_menu" name="Standard Problem" parent="sevice_repair_config_menu" action="action_standard_problem_tree_view"/>
+			
+			
+            
+            <record model="ir.ui.view" id="product_accessory_tree_view">
+                <field name="name">product.accessory.tree</field>
+                <field name="model">product.accessory</field>
+                <field name="type">tree</field>
+                <field name="arch" type="xml">
+                    <tree string="Product Accessories">
+                        <field name="name"/>
+                    </tree>
+                </field>
+            </record>
+
+            <record model="ir.ui.view" id="product_accessory_form_view">
+                <field name="name">product.accessory.form</field>
+                <field name="model">product.accessory</field>
+                <field name="type">form</field>
+                <field name="arch" type="xml">
+                    <form string="Product Accessories" version="7.0">
+                    	<sheet>
+                    		<group>
+                        	<field name="name" select="1"/>
+                        	</group>
+                        </sheet>
+                    </form>
+                </field>
+            </record>
+
+            <record model="ir.actions.act_window" id="action_product_accessory_tree_view">
+                <field name="name">Product Accessories</field>
+                <field name="type">ir.actions.act_window</field>
+                <field name="res_model">product.accessory</field>
+                <field name="view_type">form</field>
+                <field name="view_mode">tree,form</field>
+                <field name="view_id" ref="product_accessory_tree_view"/>
+            </record>
+
+			<menuitem id="product_accessory_menu" name="Product Accessories" parent="sevice_repair_config_menu" action="action_product_accessory_tree_view"/>
+			
+			
+			
+            
+            <record model="ir.ui.view" id="spare_product_tree_view">
+                <field name="name">spare.product.tree</field>
+                <field name="model">spare.product</field>
+                <field name="type">tree</field>
+                <field name="arch" type="xml">
+                    <tree string="Spare Product/Estimated Cost">
+                        <field name="name" />
+                        <field name="quantity"/>
+                        <field name="unit_price"/>
+                        <field name="applicable_cost"/>
+                        <field name="oldserial_no"/>
+                        <field name="newserial_no" />
+                        <field name="state" />
+                        <field name="price_subtotal" invisible="1"/>
+                    </tree>
+                </field>
+            </record>
+
+            <record model="ir.ui.view" id="spare_product_form_view">
+                <field name="name">spare.product.form</field>
+                <field name="model">spare.product</field>
+                <field name="type">form</field>
+                <field name="arch" type="xml">
+                    <form string="Spare Product/Estimated Cost" version="7.0">
+                    	<sheet>
+                    		<group>
+	                        <field name="name" select="1"/>
+	                        <field name="quantity" select="1"/>
+	                        <field name="unit_price" select="1"/>
+	                        <field name="applicable_cost" select="1"/>
+	                        <field name="oldserial_no" select="1"/>
+	                        <field name="newserial_no" select="1"/>
+	                        <field name="state" select="1"/>
+	                       	<field name="price_subtotal" invisible="1"/>
+	                        <separator string="Serial Number" colspan="4"/>
+	                        <field name="serialize_ids" nolabel="1" colspan="4" domain="[('product_id','=',name),('state','!=','sold')]"/>
+	                        </group>
+                        </sheet>
+                    </form>
+                </field>
+            </record>
+
+            <record model="ir.actions.act_window" id="action_spare_product_tree_view">
+                <field name="name">Spare Product/Estimated Cost</field>
+                <field name="type">ir.actions.act_window</field>
+                <field name="res_model">spare.product</field>
+                <field name="view_type">form</field>
+                <field name="view_mode">tree,form</field>
+                <field name="view_id" ref="spare_product_tree_view"/>
+            </record>
+
+			<menuitem id="spare_product_menu" name="Spare Product" parent="sevice_repair_config_menu" action="action_spare_product_tree_view"/>
+
+
+			
+            
+            <record model="ir.ui.view" id="standard_diagnosis_tree_view">
+                <field name="name">standard.diagnosis.tree</field>
+                <field name="model">standard.diagnosis</field>
+                <field name="type">tree</field>
+                <field name="arch" type="xml">
+                    <tree string="Standard Diagnosis">
+                        <field name="name"/>
+                        <field name="description"/>
+                    </tree>
+                </field>
+            </record>
+
+            <record model="ir.ui.view" id="standard_diagnosis_form_view">
+                <field name="name">standard.diagnosis.form</field>
+                <field name="model">standard.diagnosis</field>
+                <field name="type">form</field>
+                <field name="arch" type="xml">
+                    <form string="Standard Diagnosis" version="7.0">
+                    	<sheet>
+                    	<group>
+                        <field name="name" select="1" colspan="4"/>
+                        <separator string="Description" colspan="4"/>
+                        <field name="description" select="1" nolabel="1" colspan="4"/>
+                        </group>
+                        </sheet>
+                    </form>
+                </field>
+            </record>
+
+            <record model="ir.actions.act_window" id="action_standard_diagnosis_tree_view">
+                <field name="name">Standard Diagnosis</field>
+                <field name="type">ir.actions.act_window</field>
+                <field name="res_model">standard.diagnosis</field>
+                <field name="view_type">form</field>
+                <field name="view_mode">tree,form</field>
+                <field name="view_id" ref="standard_diagnosis_tree_view"/>
+            </record>
+
+			<menuitem id="standard_diagnosis_menu" name="Standard Diagnosis" parent="sevice_repair_config_menu" action="action_standard_diagnosis_tree_view"/>
+
+			
+            
+            <record model="ir.ui.view" id="repair_order_tree_view">
+                <field name="name">repair.order.tree</field>
+                <field name="model">repair.order</field>
+                <field name="type">tree</field>
+                <field name="arch" type="xml">
+                    <tree string="Service Repair Order" colors="green:machine_collected == True;red:customer_happy == True;blue:customer_neutral == True;">
+                    	<field name="type_id" />
+                        <field name="name"/>
+                        <field name="inward_date" />
+                        <field name="partner_id"/>
+                        <field name="product_id"/>
+                        <field name="type"/>
+                        <field name="service_person_id"/>
+                        <field name="state"/>
+                        <field name="customer_neutral" invisible="1"/>
+                        <field name="customer_happy" invisible="1"/>
+                        <field name="machine_collected" invisible="1"/>
+                    </tree>
+                </field>
+            </record>
+            
+            <record model="ir.ui.view" id="repair_order_search_view">
+                <field name="name">repair.order.search</field>
+                <field name="model">repair.order</field>
+                <field name="type">search</field>
+                <field name="arch" type="xml">
+                    <search string="Service Repair Order">
+                    	<group col="6" colspan="4">
+                    		<field name="type_id" />
+                    		<field name="name" />
+                    		<field name="partner_id" />
+                    		<field name="product_id"/>
+                    		<field name="service_person_id" />
+                    		<field name="type" />
+                    		<field name="state" />
+                        	
+                    	</group>
+                    	<newline/>
+                    	<group col="6" colspan="4">
+                    		<field name="engineer_id1" />
+                    		<field name="engineer_id2" />
+                        	<field name="inward_date" />
+                        	<field name="close_date" />
+                        	<field name="gsx_no" />
+                        	
+                    	</group>
+					</search>
+				</field>
+			</record>
+            <record model="ir.ui.view" id="repair_order_form_view">
+                <field name="name">repair.order.form</field>
+                <field name="model">repair.order</field>
+                <field name="type">form</field>
+                <field name="arch" type="xml">
+                    <form string="Service Repair Order" version="7.0">
+                    	<header>
+                    		<button name="open" string='Process Repair' states='draft' colspan="2"/>
+                   			<button name="process" string='Process Repair' states='open' colspan="2"/>
+                   			<button name="quotecust" string='Process Repair' states='diagnosis' colspan="2"/>
+                   			<button name="orderpart" string='Process Repair' states='quote' colspan="2"/>
+                   			<button name="partsordered" string='Process Repair' states='purchase' colspan="2"/>
+                   			<button name="delivered" string="Process Repair" states="complete" colspan="2"/>
+                   			<button name="received" string="Process Repair" states="ordered" colspan="2"/>
+                   			<button name="reordered" string="Process Repair" states="received" colspan="2"/>
+                   			<button name="complete" string="Process Repair" states="reordered" colspan="2"/>
+                   			<button name="state_happy_Calling" string="Process Repair" states="delivered" colspan="2"/>
+                   			<button name="set_to_draft" string="Set To Draft" type="object" states="cancel"/>
+                   			<button name="return" string="Return Without Repair" states="draft,open,diagnosis,quote,purchase,ordered,received,reordered,"/>
+<!--		                <button name="process_repair"  string="Process Repair" type="object" icon="gtk-forward"/>-->
+                   			<button name="cancel" states="draft,open,diagnosis" string="Cancel" icon="gtk-cancel"/>
+                   			<button name="create_invoice" states="complete,delivered,calling" string="Create Invoice" type="object" icon="gtk-forward"/>
+                   			<field name="state" widget="statusbar"/>
+                    	</header>
+                    	<sheet>
+                    	<group col="4" colspan="4">
+                    		<group col="2" colspan="2">
+	                    		<field name="type_id" colspan="1"/>
+	                    		<field name="partner_id" />
+	                    		<field name="service_person_id" />
+	                    		<field name="inward_date" />
+	                        	<field name="login_date" />
+	                        </group>
+                        	<group col="2" colspan="2">
+	                        	<field name="name" colspan="1"/>
+	                        	<field name="type" />
+	                        	<field name="backup" />
+	                        	<field name="close_date" />
+	                        	<field name="collect_date" />
+                        	</group>
+                        </group>
+                        <notebook colspan="4">
+                        	<page string="Order">
+                        			<group col="4" colspan="4">
+                        				<separator string="Problem Description" colspan="4"/>
+	                        			<group col="2" colspan="2">
+	                        				<field name="product_id" />
+	                        				<field name="problem_id" on_change="change_problem_id(problem_id)"/>
+	                        				<field name="serial_no" />
+	                        			</group>
+	                        			<group col="2" colspan="2">
+	                        				<field name="purchase_date" />
+	                        				<field name="gsx_no" />
+	                        			</group>
+	                        		  </group>
+                        			<group col="6" colspan="6">
+                        				<separator string="Images" colspan="6"/>
+                        				<field name="picture1" nolabel="1" widget="image" height="100" width="100" col="2" colspan="2"/>
+                        				<field name="picture2" nolabel="1" widget="image" height="100" width="100" col="2" colspan="2"/>
+                        				<field name="picture3" nolabel="1" widget="image" height="100" width="100" col="2" colspan="2"/>
+                        			</group>
+                        			<group col="4" colspan="4">
+                        				<separator string="Problem Description" colspan="4"/>
+                        				<field name="problem_desc" nolabel="1" colspan="4" />
+                        			</group>
+	                        				<separator string="Equipment Condition"/>
+	                        				<field name="equip_candition" nolabel="1" />
+	                        				<separator string="Custom Upgrades" />
+	                        				<field name="upgrade" nolabel="1"/>
+	                        			
+	                        				<separator string="Diagnosis Result"/>
+	                        				<field name="diagnosis_result" nolabel="1" />
+	                        				<separator string="Work Done" />
+	                        				<field name="work_done" nolabel="1"/>
+                        		
+                        	</page>
+                        	<page string="Service Details">
+                        		<group col="6" colspan="6">
+                       				<separator string="Service Details" colspan="6"/>
+                       				<field name="engineer_id1" />
+                       				<field name="diagnosis_id" on_change="change_diagnosis_id(diagnosis_id)"/>
+                       				<field name="engineer_id2" />
+                       			</group>
+                        	</page>
+                        	<page string="Accessories Received">
+                        		<group col="6" colspan="6">
+                       				<separator string="Accessories Received" colspan="6"/>
+                       				<field name="accessory_id" nolabel="1" colspan="6"/>
+                       			</group>
+                        	</page>
+                        	<page string="Checklist">
+                        		<group col="6" colspan="6">
+                       				<separator string="Checklist" colspan="6"/>
+                       				<field name="checklist_id" on_change="onchange_checklist(checklist_id)"/>
+                       				<field name="checklist_line" nolabel="1" colspan="6" widget="one2many_list">
+                       					<tree string="Checklist" editable="top">
+                       						<field name="name"/>
+                       						<field name="instate"/>
+                       						<field name="outstate"/>
+                       					</tree> 
+                       					<form string="Checklist">
+                       						<field name="name"/>
+                       						<field name="instate"/>
+                       						<field name="outstate"/>
+                       					</form> 
+                       				</field>
+                       			</group>
+                        	</page>
+                        	<page string="Spares Replaced">
+                        		<group col="6" colspan="6">
+                       				<separator string="Spares Replaced" colspan="6"/>
+                       				<field name="part_reorder" />
+                       				<field name="spare_line" nolabel="1" colspan="6"/>
+                       			</group>
+                        	</page>
+                        	<page string="Happy Calling">
+                        		<group col="6" colspan="6">
+                       				<separator string="Happy Calling" colspan="6"/>
+                       				<field name="machine_collected" />
+                       				<field name="customer_happy" />
+                       				<field name="customer_neutral" />
+                       				
+                       				<field name="calling" nolabel="1" colspan="6"/>
+                       			</group>
+                        	</page>
+                        	<page string="Notes">
+                        		<group col="6" colspan="6">
+	                        		<separator string="Internal Notes" colspan="6"/>
+		                        	<field name="internal_note" nolabel="1" colspan="6"/>
+		                        	<separator string="Printed Notes" colspan="6"/>
+		                        	<field name="printed_note" nolabel="1" colspan="6"/>
+		                        </group>
+                        	</page>
+                        </notebook>
+                       </sheet>
+                    </form>
+                </field>
+            </record>
+
+            <record model="ir.actions.act_window" id="action_repair_order_tree_view">
+                <field name="name">Service Repair Order</field>
+                <field name="type">ir.actions.act_window</field>
+                <field name="res_model">repair.order</field>
+                <field name="view_type">form</field>
+                <field name="view_mode">tree,form</field>
+                <field name="view_id" ref="repair_order_tree_view"/>
+                <field name="search_view_id" ref="repair_order_search_view"/>
+            </record>
+
+			<menuitem id="repair_order_menu" name="Service Repair Order" parent="sevice_repair_menu" action="action_repair_order_tree_view"/>
+
+
+			
+            
+            <record model="ir.ui.view" id="checklist_type_tree_view">
+                <field name="name">checklist.type.tree</field>
+                <field name="model">checklist.type</field>
+                <field name="type">tree</field>
+                <field name="arch" type="xml">
+                    <tree string="Check List">
+                        <field name="name"/>
+                    </tree>
+                </field>
+            </record>
+
+            <record model="ir.ui.view" id="checklist_type_form_view">
+                <field name="name">checklist.type.form</field>
+                <field name="model">checklist.type</field>
+                <field name="type">form</field>
+                <field name="arch" type="xml">
+                    <form string="Check List" version="7.0">
+                    	<sheet>
+                    	<group>
+                        <field name="name" select="1"/>
+                        <newline/>
+                        <separator string="Checklist Items" colspan="4"/>
+                        <field name="checklist_ids" nolabel="1" colspan="4"/>
+                        </group>
+                        </sheet>
+                    </form>
+                </field>
+            </record>
+
+            <record model="ir.actions.act_window" id="action_checklist_type_tree_view">
+                <field name="name">Checklist Type</field>
+                <field name="type">ir.actions.act_window</field>
+                <field name="res_model">checklist.type</field>
+                <field name="view_type">form</field>
+                <field name="view_mode">tree,form</field>
+                <field name="view_id" ref="checklist_type_tree_view"/>
+            </record>
+
+			<menuitem id="checklist_type_menu" name="Checklist Type" parent="sevice_repair_config_menu" action="action_checklist_type_tree_view"/>
+
+				
+			<record model="ir.ui.view" id="checklist_line_tree_view">
+                <field name="name">checklist.line.tree</field>
+                <field name="model">checklist.line</field>
+                <field name="type">tree</field>
+                <field name="arch" type="xml">
+                    <tree string="Check List">
+                        <field name="name"/>
+   						<field name="instate"/>
+   						<field name="outstate"/>
+                    </tree>
+                </field>
+            </record>
+
+            <record model="ir.ui.view" id="checklist_line_form_view">
+                <field name="name">checklist.line.form</field>
+                <field name="model">checklist.line</field>
+                <field name="type">form</field>
+                <field name="arch" type="xml">
+                    <form string="Check List" version="7.0">
+                    	<sheet>
+                    		<group>
+	                    	<field name="name" select="1"/>
+	                    	<newline/>
+	   						<field name="instate" select="1"/>
+	   						<field name="outstate" select="1"/>
+	   						</group>
+                        </sheet>
+                    </form>
+                </field>
+            </record>
+
+            <record model="ir.actions.act_window" id="action_checklist_line_tree_view">
+                <field name="name">Checklist Line</field>
+                <field name="type">ir.actions.act_window</field>
+                <field name="res_model">checklist.line</field>
+                <field name="view_type">form</field>
+                <field name="view_mode">tree,form</field>
+                <field name="view_id" ref="checklist_line_tree_view"/>
+            </record>
+
+			<menuitem id="checklist_line_menu" name="Checklist Line" parent="sevice_repair_config_menu" action="action_checklist_line_tree_view"/>
+			
+    
+    </data>
+</openerp>

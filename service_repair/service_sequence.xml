@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <record id="seq_type_repair_order" model="ir.sequence.type">
+            <field name="name">Service Repair Order</field>
+            <field name="code">repair.order</field>
+        </record>
+
+        <record id="seq_repair_order" model="ir.sequence">
+            <field name="name">Service Repair Order</field>
+            <field name="code">repair.order</field>
+            <field name="prefix">RO</field>
+            <field name="padding">3</field>
+        </record>
+
+    </data>
+</openerp>

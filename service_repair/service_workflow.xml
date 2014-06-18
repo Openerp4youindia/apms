@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+	<data>
+		
+		<record id="sro_wkf" model="workflow">
+				<field name="name">SRO WORKFLOW</field>
+				<field name="osv" >repair.order</field>
+				<field name="on_create">True</field>
+		</record>
+		
+		<record id="act_draft" model="workflow.activity">
+				<field name="wkf_id" ref="sro_wkf"></field>
+				<field name="name" >draft</field>
+				<field name="flow_start">True</field>
+		</record>
+		
+		<record id="act_open" model="workflow.activity">
+			<field name="wkf_id" ref="sro_wkf"></field>
+			<field name="name" >open</field>
+			<field name="kind" >function</field>
+			<field name="action">state_open()</field>
+		</record>
+		
+		<record id="act_diagnosis" model="workflow.activity">
+			<field name="wkf_id" ref="sro_wkf"></field>
+			<field name="name" >diagnosis</field>
+			<field name="kind" >function</field>
+			<field name="action">state_diagnosis()</field>
+		</record>
+		
+		<record id="act_quoteCust" model="workflow.activity">
+			<field name="wkf_id" ref="sro_wkf"></field>
+			<field name="name" >quote</field>
+			<field name="kind" >function</field>
+			<field name="action">state_quote_cust()</field>
+		</record>
+		
+		<record id="act_orderpart" model="workflow.activity">
+			<field name="wkf_id" ref="sro_wkf"></field>
+			<field name="name" >Order Part</field>
+			<field name="kind" >function</field>
+			<field name="action">state_order_part()</field>
+		</record>
+		
+		<record id="act_partsOrdered" model="workflow.activity">
+			<field name="wkf_id" ref="sro_wkf"></field>
+			<field name="name" >Parts Ordered</field>
+			<field name="kind" >function</field>
+			<field name="action">state_parts_ordered()</field>
+		</record>
+		
+		<record id="act_received" model="workflow.activity">
+			<field name="wkf_id" ref="sro_wkf"></field>
+			<field name="name" >Parts Received</field>
+			<field name="kind" >function</field>
+			<field name="action">state_received()</field>
+		</record>
+		
+		
+		
+		
+		<record id="act_reordered" model="workflow.activity">
+			<field name="wkf_id" ref="sro_wkf"></field>
+			<field name="name" >Parts Reordered</field>
+			<field name="kind" >function</field>
+			<field name="action">state_reordered()</field>
+		</record>
+		
+		
+		<record id="act_repairComplete" model="workflow.activity">
+			<field name="wkf_id" ref="sro_wkf"></field>
+			<field name="name" >complete</field>
+			<field name="kind" >function</field>
+			<field name="action">state_complete()</field>
+		</record>
+		
+		<record id="act_delivered" model="workflow.activity">
+			<field name="wkf_id" ref="sro_wkf"></field>
+			<field name="name" >delivered</field>
+			<field name="kind" >function</field>
+			<field name="action">state_delivered()</field>
+		</record>
+		
+		<record id="act_happycalling" model="workflow.activity">
+			<field name="wkf_id" ref="sro_wkf"></field>
+			<field name="name" >calling</field>
+			<field name="kind" >function</field>
+			<field name="action">state_happy_Calling()</field>
+			<field name="flow_stop">True</field>
+		</record>
+		
+		
+		
+		<record id="act_cancel" model="workflow.activity">
+			<field name="wkf_id" ref="sro_wkf"/>
+			<field name="name" >cancel</field>
+			<field name="kind">function</field>
+			<field name="action">write({'state':'cancel'})</field>
+		</record>
+		
+		<record id="act_return" model="workflow.activity">
+			<field name="wkf_id" ref="sro_wkf"/>
+			<field name="name" >return</field>
+			<field name="kind">function</field>
+			<field name="action">return_without_repair()</field>
+		</record>
+		
+		
+		
+			<!--  ************************TRANSITIONS*********************** -->
+			<!--  **********************================*********************** -->
+			
+		<record id="draft_open" model="workflow.transition">
+			<field name="act_from" ref="act_draft"></field> 
+			<field name="act_to" ref="act_open"></field>
+			<field name="signal">open</field>
+		</record>
+
+		<record id="draft_cancel" model="workflow.transition">
+			<field name="act_from" ref="act_draft"></field> 
+			<field name="act_to" ref="act_cancel"></field>
+			<field name="signal">cancel</field>
+		</record>
+		
+		<record id="open_cancel" model="workflow.transition">
+			<field name="act_from" ref="act_open"></field> 
+			<field name="act_to" ref="act_cancel"></field>
+			<field name="signal">cancel</field>
+		</record>
+		
+		<record id="diagnosis_cancel" model="workflow.transition">
+			<field name="act_from" ref="act_diagnosis"></field> 
+			<field name="act_to" ref="act_cancel"></field>
+			<field name="signal">cancel</field>
+		</record>
+		
+		<record id="set_to_draft" model="workflow.transition">
+			<field name="act_from" ref="act_cancel"></field> 
+			<field name="act_to" ref="act_draft"></field>
+		</record>
+		
+		
+		<record id="open_repairComplete" model="workflow.transition">
+			<field name="act_from" ref="act_open"></field> 
+			<field name="act_to" ref="act_repairComplete"></field>
+			<field name="signal">process</field>
+			<field name="condition">not service_diagnosis()</field>
+		</record>
+		
+		
+		<record id="open_underDiagnosys" model="workflow.transition">
+			<field name="act_from" ref="act_open"></field> 
+			<field name="act_to" ref="act_diagnosis"></field>
+			<field name="signal">process</field>
+			<field name="condition">service_diagnosis()</field>
+		</record>
+	
+		
+		<record id="UnderDiagnosis_orderPart" model="workflow.transition">
+			<field name="act_from" ref="act_diagnosis"></field> 
+			<field name="act_to" ref="act_orderpart"></field>
+			<field name="signal">quotecust</field>
+			<field name="condition">not service_quote_cust()</field>
+		</record>
+		
+		<record id="UnderDiagnosis_QuoteCust" model="workflow.transition">
+			<field name="act_from" ref="act_diagnosis"></field> 
+			<field name="act_to" ref="act_quoteCust"></field>
+			<field name="signal">quotecust</field>
+			<field name="condition">service_quote_cust()</field>
+		</record>
+		
+		
+		<record id="quotecust_orderPart" model="workflow.transition">
+			<field name="act_from" ref="act_quoteCust"></field> 
+			<field name="act_to" ref="act_orderpart"></field>
+			<field name="signal">orderpart</field>
+		</record>
+		
+		
+		
+		<record id="orderPart_partsordered" model="workflow.transition">
+			<field name="act_from" ref="act_orderpart"></field> 
+			<field name="act_to" ref="act_partsOrdered"></field>
+			<field name="signal">partsordered</field>
+		</record>
+		
+		<record id="partsordered_partsreceived" model="workflow.transition">
+			<field name="act_from" ref="act_partsOrdered"></field> 
+			<field name="act_to" ref="act_received"></field>
+			<field name="signal">received</field>
+		</record>
+		
+		<record id="received_complete" model="workflow.transition">
+			<field name="act_from" ref="act_received"></field> 
+			<field name="act_to" ref="act_repairComplete"></field>
+			<field name="signal">reordered</field>
+			<field name="condition">not service_reordered()</field>
+		</record>
+		
+		<record id="partsreceived_reordered" model="workflow.transition">
+			<field name="act_from" ref="act_received"></field> 
+			<field name="act_to" ref="act_reordered"></field>
+			<field name="signal">reordered</field>
+			<field name="condition">service_reordered()</field>
+		</record>
+		
+		
+		
+		<record id="reordered_complete" model="workflow.transition">
+			<field name="act_from" ref="act_reordered"></field> 
+			<field name="act_to" ref="act_repairComplete"></field>
+			<field name="signal">complete</field>
+		</record>
+		
+		
+		<record id="complete_delivered" model="workflow.transition">
+			<field name="act_from" ref="act_repairComplete"></field> 
+			<field name="act_to" ref="act_delivered"></field>
+			<field name="signal">delivered</field>
+		</record>
+		
+		<record id="delivered_happpycalling" model="workflow.transition">
+			<field name="act_from" ref="act_delivered"></field> 
+			<field name="act_to" ref="act_happycalling"></field>
+			<field name="signal">state_happy_Calling</field>
+		</record>
+		
+		<record id="draft_return" model="workflow.transition">
+			<field name="act_from" ref="act_draft"></field> 
+			<field name="act_to" ref="act_return"></field>
+			<field name="signal">return</field>
+		</record>
+		
+		<record id="open_return" model="workflow.transition">
+			<field name="act_from" ref="act_open"></field> 
+			<field name="act_to" ref="act_return"></field>
+			<field name="signal">return</field>
+		</record>
+	
+		<record id="diagnosis_return" model="workflow.transition">
+			<field name="act_from" ref="act_diagnosis"></field> 
+			<field name="act_to" ref="act_return"></field>
+			<field name="signal">return</field>
+		</record>
+		
+		<record id="quote_return" model="workflow.transition">
+			<field name="act_from" ref="act_quoteCust"></field> 
+			<field name="act_to" ref="act_return"></field>
+			<field name="signal">return</field>
+		</record>
+		
+		<record id="purchase_return" model="workflow.transition">
+			<field name="act_from" ref="act_orderpart"></field> 
+			<field name="act_to" ref="act_return"></field>
+			<field name="signal">return</field>
+		</record>
+			
+		<record id="partOrdered_return" model="workflow.transition">
+			<field name="act_from" ref="act_partsOrdered"></field> 
+			<field name="act_to" ref="act_return"></field>
+			<field name="signal">return</field>
+		</record>
+		
+		<record id="received_return" model="workflow.transition">
+			<field name="act_from" ref="act_received"></field> 
+			<field name="act_to" ref="act_return"></field>
+			<field name="signal">return</field>
+		</record>
+		
+		<record id="reordered_return" model="workflow.transition">
+			<field name="act_from" ref="act_reordered"></field> 
+			<field name="act_to" ref="act_return"></field>
+			<field name="signal">return</field>
+		</record>
+		
+	</data>
+</openerp>
+		
+

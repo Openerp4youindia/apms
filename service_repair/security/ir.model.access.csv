@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_standard_problem user,standard.problem,model_standard_problem,base.group_user,1,1,1,1
+access_product_accessory user,product.accessory,model_product_accessory,base.group_user,1,1,1,1
+access_standard_diagnosis user,standard.diagnosis,model_standard_diagnosis,base.group_user,1,1,1,1
+access_repair_order user,repair.order,model_repair_order,base.group_user,1,1,1,1
+access_checklist_line user,checklist.line,model_checklist_line,base.group_user,1,1,1,1
+access_spare_product user,spare.product,model_spare_product,base.group_user,1,1,1,1
+access_checklist_type user,checklist.type,model_checklist_type,base.group_user,1,1,1,1
+access_checklist_item user,checklist.item,model_checklist_item,base.group_user,1,1,1,1
+access_order_type user,order.type,model_order_type,base.group_user,1,1,1,1

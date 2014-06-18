@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+			<report auto="False" id="service_order_id"  model="repair.order" name="service.order" rml="service_repair/report/service_report.rml" string="Service Order" header="False"/>
+	</data>
+</openerp>
