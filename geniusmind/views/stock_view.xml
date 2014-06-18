@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    
+          
+    
+    	<record id="view_picking_out_form_inherit_genius_1" model="ir.ui.view">
+            <field name="name">stock.picking.out.form</field>
+            <field name="model">stock.picking</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="stock.view_picking_out_form"/>
+            <field name="arch" type="xml">
+            	<data>
+            		<xpath expr="/form/notebook" position="insidse">
+		            		<separator string="Internal Notes" colspan="4"/>
+		            		<field colspan="4" name="note" nolabel="1"/>
+		            		<separator string="Printed Notes" colspan="4"/>
+		            		<field colspan="4" name="printed_note" nolabel="1"/>
+		            	</xpath>
+		            	
+		           	<field name='partner_id' position="replace">
+		            		<field colspan="2" name="partner_id" readonly="1" string="Customer"/>
+		            </field>
+		            
+		            <xpath expr="/form/header/button[@name='Cancel Transfer']" position="replace">
+		            	<button name="button_cancel" states="assigned,confirmed,draft" string="Cancel Delivery" icon="gtk-cancel"/>
+		            </xpath>
+		            
+            	</data>
+            </field>
+        </record>
+      
+       <record id="view_picking_form_inherit_genius_1" model="ir.ui.view">
+            <field name="name">stock.picking.form</field>
+            <field name="model">stock.picking</field>
+            <field name="type">form</field>
+            <field eval="12" name="priority"/>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+            	<data>
+ 					
+		            <xpath expr="/form/header/button[@name='button_cancel']" position="replace">
+		            	<button name="button_cancel" states="assigned,confirmed,draft" string="Cancel Moves" icon="gtk-cancel"/>
+		            </xpath>
+            	</data>
+            </field>
+        </record>  
+  <!-- 
+        <record id="view_picking_in_form_inherit_genius_1" model="ir.ui.view">
+            <field name="name">stock.picking.in.form</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_in_form"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+            	<data>
+            		<xpath expr="/form/notebook/page[@string='General Information']/field[@name='move_lines']/form/field[@name='state']" position="after">
+		            		<newline/>
+		            		<separator string="Serial No" colspan="4"/>
+		            		<field colspan="4" name="serialize_ids" nolabel="1" domain="[('product_id','=',product_id)]"/>
+		            </xpath>
+		            
+		            <xpath expr="/form/notebook/page[@string='General Information']/group/button[@name='button_cancel']" position="replace">
+		            	<button name="button_cancel" states="assigned,confirmed,draft" string="Cancel Shipment" icon="gtk-cancel"/>
+		            </xpath>
+		            
+            	</data>
+            </field>
+            </record> -->
+        
+         <record id="view_move_search_inherit_genius_1" model="ir.ui.view">
+            <field name="name">stock.move.search</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_search"/>
+            <field name="type">search</field>
+            <field eval="3" name="priority"/>
+            <field name="arch" type="xml">
+        		<field name='product_id' position="after">
+        			<field name="serialize_ids" />
+				</field>    
+			</field>
+		</record>
+		
+		<record id="view_inventory_form_inherit_genius_1" model="ir.ui.view">
+            <field name="name">stock.inventory.form</field>
+            <field name="model">stock.inventory</field>                
+            <field name="inherit_id" ref="stock.view_inventory_form"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+            	<data>
+	                <field name='inventory_line_id' position="replace">
+	                <field colspan="4" name="inventory_line_id" nolabel="1" >
+	                	<tree string="Products">
+                                <field domain="[('usage','=','internal')]" name="location_id"/>
+                                <field context="{'location':location_id, 'uom':product_uom, 'to_date':parent.date}" name="product_id" on_change="on_change_product_id(location_id,product_id,product_uom,parent.date)"  domain="[('type','&lt;&gt;','service')]"/>
+                                <field name="product_qty"/>
+                                <field name="product_uom"/>
+                                <field name="prod_lot_id" groups="base.group_extended"/>
+                                <button name="%(stock.action_view_stock_inventory_line_split)d"
+                                    string="Split inventory lines" groups="base.group_extended"
+                                    type="action" icon="terp-stock_effects-object-colorize" states="draft,confirm"/>
+                                <field name="state" invisible="True"/>
+                            </tree>
+	                		<form string="Products ">
+                                <field domain="[('usage','=','internal')]" name="location_id"/>
+                                <newline/>
+                                <field context="{'location':location_id, 'uom':product_uom, 'to_date':parent.date}" name="product_id" on_change="on_change_product_id(location_id,product_id,product_uom,parent.date)"  domain="[('type','&lt;&gt;','service')]"/>
+                                <field name="product_qty"/>
+                                <field name="product_uom"/>
+                                <field name="name" invisible="1"/>
+                                <group colspan="2" col="4">
+                                <field name="prod_lot_id" groups="base.group_extended"/>
+                                    <button name="%(stock.action_view_stock_inventory_line_split)d"
+                                        string="Split inventory lines" groups="base.group_extended"
+                                        type="action" icon="terp-stock_effects-object-colorize"/>
+                                </group>
+                                <newline/>
+			            		<separator string="Serial No" colspan="4"/>
+				            		<field colspan="4" name="serial_line"  nolabel="1" widget="one2many_list">
+				            			<tree string="Products" editable="bottom">
+			                                <field name="name"/>
+			                                <field name="prod_inv_id" invisible="True"/>
+			                            </tree>
+			                       </field>
+                            </form>
+		            		</field>
+		            </field>
+	                
+                </data>
+             </field>
+         </record>
+         
+         <record id="stock_partial_picking_form_inherit_genius_1" model="ir.ui.view">
+            <field name="name">stock.partial.picking.form</field>
+            <field name="model">stock.partial.picking</field>
+            <field name="inherit_id" ref="stock.stock_partial_picking_form"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <xpath expr="/form/footer/button[@name='do_partial']" position="replace">
+                	<button name="call_serialized" string="_Validate" colspan="1" type="object" icon="gtk-go-forward" />
+                </xpath>
+            </field>
+        </record>
+        
+        <record id="view_move_form_inherit_genius_1" model="ir.ui.view">
+            <field name="name">stock.move.form</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_form"/>
+            <field name="type">form</field>
+            <field eval="4" name="priority"/>
+            <field name="arch" type="xml">
+         		<field name='location_id' position="before">
+         			<separator string="Serial No" colspan="7"/>
+		            		<field colspan="7" name="serialize_ids" nolabel="1" domain="[('product_id','=',product_id),('state','=',True)]"/>
+         			</field>
+         	</field>
+         </record>
+
+         <record id="view_stock_return_picking_form_inherit_genius_1" model="ir.ui.view">
+            <field name="name">Return lines</field>
+            <field name="model">stock.return.picking</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="stock.view_stock_return_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form/footer/button[@name='create_returns']" position="replace">
+                	<button name="call_return_serialized" string="Return" colspan="1" type="object" icon="gtk-apply" />
+                </xpath>
+            </field>
+        </record>   	      
+    </data>
+</openerp>

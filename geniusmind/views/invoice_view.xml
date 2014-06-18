@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+    	<record id="account.act_proforma2" model="workflow.activity">
+            <field name="wkf_id" ref="account.wkf"/>
+            <field name="name">proforma2</field>
+            <field name="action">action_proforma()</field>
+            <field name="kind">function</field>
+        </record>
+
+            
+            <record model="ir.ui.view" id="type_invoice_tree_view">
+                <field name="name">type.invoice.tree</field>
+                <field name="model">type.invoice</field>
+                <field name="type">tree</field>
+                <field name="arch" type="xml">
+                    <tree string="Type Of Invoice">
+                        <field name="name"/>
+                        <field name="report"/>
+                        <field name="journal_id"/>
+                    </tree>
+                </field>
+            </record>
+   
+            <record model="ir.ui.view" id="type_invoice_form_view">
+                <field name="name">type.invoice.form</field>
+                <field name="model">type.invoice</field>
+                <field name="type">form</field>
+                <field name="arch" type="xml">
+                    <form string="Type Of Invoice">
+                        <field name="name" select="1"/>
+                        <field name="report" select="1"/>
+                        <field name="journal_id" select="1"/>
+                    </form>
+                </field>
+            </record>
+
+            <record model="ir.actions.act_window" id="action_type_invoice_tree_view">
+                <field name="name">Invoice Type</field>
+                <field name="type">ir.actions.act_window</field>
+                <field name="res_model">type.invoice</field>
+                       <!-- <field name="domain">[('field_name','condition',criteria)]</field>-->
+                <field name="view_type">form</field>
+                <field name="view_mode">tree,form</field>
+                <field name="view_id" ref="type_invoice_tree_view"/>
+            </record>
+
+	<menuitem id="type_invoice_menu" name="Invoice Type" parent="account.menu_finance_configuration" action="action_type_invoice_tree_view"/>
+
+     	
+        <record id="invoice_form_inherit_genius_1" model="ir.ui.view">
+            <field name="name">account.invoice.form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+            	<data>
+            		<field name='name' position="replace">
+		            	<field name="name" groups="base.group_extended"/>
+	            		<!-- <field  name="purch_number" />
+	            		<field  name="pur_date" /> -->
+	            	</field>
+		            <field name="partner_id" position="after">
+		            <field  name="purch_number" />
+                                        <field  name="purch_date" />
+		            </field>
+		            <xpath expr="//notebook" position="inside">	
+		                <page string="Note">	            		
+	            		<separator colspan="4" string="Internal Notes"/>
+	            		<field name="note"/>
+	            		<separator colspan="4" string="Printed Notes"/>
+                                        <field colspan="4" name="printed_note" nolabel="1"/>
+            		      </page>
+	            	</xpath>
+	            	<!-- 
+	            	<field name='amount_untaxed' position="after">	
+	            		<field name="shipping_cost"/>
+                                        <field name="total_weight"/>
+	            	</field>
+	            	 
+	            	<button name='button_reset_taxes' position="after">		            		
+	            		<button colspan="2" name="%(shipping_cost_action)d" states="draft" string="Compute Shipping" type="action" groups="base.group_user" icon="terp-stock_format-scientific"/>
+	            		
+	            	</button> 
+	            	
+	            	<xpath expr="/form/header" position="inside">		            		
+	            		<button name="get_report_id" string="Print Invoice" type="object" icon="gtk-print" states="open,paid,proforma,sale,proforma2"/>
+	            		
+	            	</xpath>
+	            	
+	            	<field name='journal_id' position="replace">
+	            		<field name="invoice_type_id" on_change="onchange_invoice_type(invoice_type_id)" widget="selection" attrs="{'required':[('type','in',['out_invoice'])],'invisible':[('type','not in',['out_invoice'])]}"/>
+	            		<field name="journal_id" groups="base.group_user" on_change="onchange_journal_id(journal_id, context)" widget="selection" attrs="{'invisible':[('type','in',['out_invoice'])]}"/>
+	            	</field>
+	            	-->
+            	</data>
+            </field>
+        </record>
+    </data>
+</openerp>

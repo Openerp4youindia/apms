@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    		
+    		<record id="return_serialized_product_search_view" model="ir.ui.view">
+    			<field name="name">return.serialized.product.search</field>
+    			<field name="model">return.serialized.product</field>
+    			<field name="type">search</field>
+    			<field name="arch" type="xml">
+    				<search string="Serializing Products">
+    					<field name="name"/>
+    				</search>
+    			</field>
+    		</record>
+    		
+    		<record id="return_serialized_product_form_view" model="ir.ui.view">
+    			<field name="name">return.serialized.product.form</field>
+    			<field name="model">return.serialized.product</field>
+    			<field name="type">form</field>
+    			<field name="arch" type="xml">
+    				<form string="Serializing Products">
+    					<field name="name" select="1" invisible="1"/>
+    				</form>
+    			</field>
+    		</record>
+    		
+    		<record id="return_serialized_product_action" model="ir.actions.act_window">
+    			<field name="name">Return Serialize Product</field>
+    			<field name="res_model">return.serialized.product</field>
+    			<field name="type">ir.actions.act_window</field>
+    			<field name="view_type">form</field>
+    			<field name="view_mode">form</field>
+    			<field name="view_id" ref="return_serialized_product_form_view"/>
+<!--				<field name="search_view_id" ref="serialized_product_search_view"/>-->
+    		</record>
+    		
+    			 
+    
+    </data>
+</openerp>

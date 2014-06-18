@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    		
+    		<record id="serialized_product_search_view" model="ir.ui.view">
+    			<field name="name">serialized.product.search</field>
+    			<field name="model">serialized.product</field>
+    			<field name="type">search</field>
+    			<field name="arch" type="xml">
+    				<search string="Serializing Products">
+    					<field name="name"/>
+    				</search>
+    			</field>
+    		</record>
+    		
+    		<record id="serialized_product_form_view" model="ir.ui.view">
+    			<field name="name">serialized.product.form</field>
+    			<field name="model">serialized.product</field>
+    			<field name="type">form</field>
+    			<field name="arch" type="xml">
+    				<form string="Serializing Products">
+    					<field name="name" select="1" invisible="1"/>
+    				</form>
+    			</field>
+    		</record>
+    		
+    		<record id="serialized_product_action" model="ir.actions.act_window">
+    			<field name="name">Serializing Product</field>
+    			<field name="res_model">serialized.product</field>
+    			<field name="type">ir.actions.act_window</field>
+    			<field name="view_type">form</field>
+    			<field name="view_mode">form,search</field>
+    			<field name="view_id" ref="serialized_product_form_view"/>
+<!--				<field name="search_view_id" ref="serialized_product_search_view"/>-->
+    		</record>
+    		
+    		
+    	 	
+    	<record id="serialized_line1_tree_view" model="ir.ui.view">
+            <field name="name">serialized.line1.tree</field>
+            <field name="model">serialized.line1</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree editable="top" string="Product Moves">
+                    <field name="serial_no"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="serialized_line1_form_view" model="ir.ui.view">
+            <field name="name">serialized.line1.form</field>
+            <field name="model">serialized.line1</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="serial_no"/>
+                 </form>
+            </field>
+        </record>  
+        
+        <record id="serialized_line2_tree_view" model="ir.ui.view">
+            <field name="name">serialized.line2.tree</field>
+            <field name="model">serialized.line2</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree editable="top" string="Product Moves">
+                    <field name="serial_no"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="serialized_line2_form_view" model="ir.ui.view">
+            <field name="name">serialized.line2.form</field>
+            <field name="model">serialized.line2</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="serial_no"/>
+                 </form>
+            </field>
+        </record>  
+        
+        <record id="serialized_line3_tree_view" model="ir.ui.view">
+            <field name="name">serialized.line3.tree</field>
+            <field name="model">serialized.line3</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree editable="top" string="Product Moves">
+                    <field name="serial_no"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="serialized_line3_form_view" model="ir.ui.view">
+            <field name="name">serialized.line3.form</field>
+            <field name="model">serialized.line3</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="serial_no"/>
+                 </form>
+            </field>
+        </record>  
+        
+        <record id="serialized_line4_tree_view" model="ir.ui.view">
+            <field name="name">serialized.line4.tree</field>
+            <field name="model">serialized.line4</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree editable="top" string="Product Moves">
+                    <field name="serial_no"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="serialized_line4_form_view" model="ir.ui.view">
+            <field name="name">serialized.line4.form</field>
+            <field name="model">serialized.line4</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="serial_no"/>
+                 </form>
+            </field>
+        </record>  
+        
+        <record id="serialized_line5_tree_view" model="ir.ui.view">
+            <field name="name">serialized.line5.tree</field>
+            <field name="model">serialized.line5</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree editable="top" string="Product Moves">
+                    <field name="serial_no"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="serialized_line5_form_view" model="ir.ui.view">
+            <field name="name">serialized.line5.form</field>
+            <field name="model">serialized.line5</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="serial_no"/>
+                 </form>
+            </field>
+        </record>  
+        
+        
+        <record id="serialized_line6_tree_view" model="ir.ui.view">
+            <field name="name">serialized.line6.tree</field>
+            <field name="model">serialized.line6</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree editable="top" string="Product Moves">
+                    <field name="serial_no"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="serialized_line6_form_view" model="ir.ui.view">
+            <field name="name">serialized.line6.form</field>
+            <field name="model">serialized.line6</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="serial_no"/>
+                 </form>
+            </field>
+        </record>  
+        
+        <record id="serialized_line7_tree_view" model="ir.ui.view">
+            <field name="name">serialized.line7.tree</field>
+            <field name="model">serialized.line7</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree editable="top" string="Product Moves">
+                    <field name="serial_no"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="serialized_line7_form_view" model="ir.ui.view">
+            <field name="name">serialized.line7.form</field>
+            <field name="model">serialized.line7</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="serial_no"/>
+                 </form>
+            </field>
+        </record>  
+        
+        <record id="serialized_line8_tree_view" model="ir.ui.view">
+            <field name="name">serialized.line8.tree</field>
+            <field name="model">serialized.line8</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree editable="top" string="Product Moves">
+                    <field name="serial_no"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="serialized_line8_form_view" model="ir.ui.view">
+            <field name="name">serialized.line8.form</field>
+            <field name="model">serialized.line8</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="serial_no"/>
+                 </form>
+            </field>
+        </record>  
+        
+        
+        <record id="serialized_line9_tree_view" model="ir.ui.view">
+            <field name="name">serialized.line9.tree</field>
+            <field name="model">serialized.line9</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree editable="top" string="Product Moves">
+                    <field name="serial_no"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="serialized_line9_form_view" model="ir.ui.view">
+            <field name="name">serialized.line9.form</field>
+            <field name="model">serialized.line9</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="serial_no"/>
+                 </form>
+            </field>
+        </record>  
+        
+        <record id="serialized_line10_tree_view" model="ir.ui.view">
+            <field name="name">serialized.line10.tree</field>
+            <field name="model">serialized.line10</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree editable="top" string="Product Moves">
+                    <field name="serial_no"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="serialized_line10_form_view" model="ir.ui.view">
+            <field name="name">serialized.line10.form</field>
+            <field name="model">serialized.line10</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="serial_no"/>
+                 </form>
+            </field>
+        </record>  
+        
+        <record id="serialized_line11_tree_view" model="ir.ui.view">
+            <field name="name">serialized.line11.tree</field>
+            <field name="model">serialized.line11</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree editable="top" string="Product Moves">
+                    <field name="serial_no"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="serialized_line11_form_view" model="ir.ui.view">
+            <field name="name">serialized.line11.form</field>
+            <field name="model">serialized.line11</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="serial_no"/>
+                 </form>
+            </field>
+        </record>  
+        
+        <record id="serialized_line12_tree_view" model="ir.ui.view">
+            <field name="name">serialized.line12.tree</field>
+            <field name="model">serialized.line12</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree editable="top" string="Product Moves">
+                    <field name="serial_no"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="serialized_line12_form_view" model="ir.ui.view">
+            <field name="name">serialized.line12.form</field>
+            <field name="model">serialized.line12</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="serial_no"/>
+                 </form>
+            </field>
+        </record>  
+        
+        <record id="serialized_line13_tree_view" model="ir.ui.view">
+            <field name="name">serialized.line13.tree</field>
+            <field name="model">serialized.line13</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree editable="top" string="Product Moves">
+                    <field name="serial_no"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="serialized_line13_form_view" model="ir.ui.view">
+            <field name="name">serialized.line13.form</field>
+            <field name="model">serialized.line13</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="serial_no"/>
+                 </form>
+            </field>
+        </record>  
+        
+        <record id="serialized_line14_tree_view" model="ir.ui.view">
+            <field name="name">serialized.line14.tree</field>
+            <field name="model">serialized.line14</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree editable="top" string="Product Moves">
+                    <field name="serial_no"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="serialized_line14_form_view" model="ir.ui.view">
+            <field name="name">serialized.line14.form</field>
+            <field name="model">serialized.line14</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="serial_no"/>
+                 </form>
+            </field>
+        </record>  
+        
+        <record id="serialized_line15_tree_view" model="ir.ui.view">
+            <field name="name">serialized.line15.tree</field>
+            <field name="model">serialized.line15</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree editable="top" string="Product Moves">
+                    <field name="serial_no"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="serialized_line15_form_view" model="ir.ui.view">
+            <field name="name">serialized.line15.form</field>
+            <field name="model">serialized.line15</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="serial_no"/>
+                 </form>
+            </field>
+        </record>  
+        
+        <record id="serialized_line16_tree_view" model="ir.ui.view">
+            <field name="name">serialized.line16.tree</field>
+            <field name="model">serialized.line16</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree editable="top" string="Product Moves">
+                    <field name="serial_no"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="serialized_line16_form_view" model="ir.ui.view">
+            <field name="name">serialized.line16.form</field>
+            <field name="model">serialized.line16</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="serial_no"/>
+                 </form>
+            </field>
+        </record>  
+        
+        <record id="serialized_line17_tree_view" model="ir.ui.view">
+            <field name="name">serialized.line17.tree</field>
+            <field name="model">serialized.line17</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree editable="top" string="Product Moves">
+                    <field name="serial_no"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="serialized_line17_form_view" model="ir.ui.view">
+            <field name="name">serialized.line17.form</field>
+            <field name="model">serialized.line17</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="serial_no"/>
+                 </form>
+            </field>
+        </record>  
+        
+        <record id="serialized_line18_tree_view" model="ir.ui.view">
+            <field name="name">serialized.line18.tree</field>
+            <field name="model">serialized.line18</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree editable="top" string="Product Moves">
+                    <field name="serial_no"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="serialized_line18_form_view" model="ir.ui.view">
+            <field name="name">serialized.line18.form</field>
+            <field name="model">serialized.line18</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="serial_no"/>
+                 </form>
+            </field>
+        </record>  
+        
+        <record id="serialized_line19_tree_view" model="ir.ui.view">
+            <field name="name">serialized.line19.tree</field>
+            <field name="model">serialized.line19</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree editable="top" string="Product Moves">
+                    <field name="serial_no"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="serialized_line19_form_view" model="ir.ui.view">
+            <field name="name">serialized.line19.form</field>
+            <field name="model">serialized.line19</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="serial_no"/>
+                 </form>
+            </field>
+        </record>  
+        
+        <record id="serialized_line20_tree_view" model="ir.ui.view">
+            <field name="name">serialized.line20.tree</field>
+            <field name="model">serialized.line20</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree editable="top" string="Product Moves">
+                    <field name="serial_no"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="serialized_line20_form_view" model="ir.ui.view">
+            <field name="name">serialized.line20.form</field>
+            <field name="model">serialized.line20</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="serial_no"/>
+                 </form>
+            </field>
+        </record>   
+
+    		 
+    
+    </data>
+</openerp>

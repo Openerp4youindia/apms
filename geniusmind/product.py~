@@ -1,0 +1,88 @@
+from datetime import datetime, timedelta
+from dateutil.relativedelta import relativedelta
+import time
+
+from osv import fields, osv
+from tools.translate import _
+import decimal_precision as dp
+import netsvc
+
+class product_product(osv.osv):
+    
+    _name = 'product.product'
+    _inherit = 'product.product'
+ 
+    _columns = {
+                'default_code' : fields.char('Product Code', size=64, required=True),
+                'ean13': fields.char('EAN13', size=13),
+                'serialized':fields.boolean('Serialized',required=True),
+                'serialize_ids':fields.one2many('product.serialize','product_id','Serial No.'),
+                }
+    _sql_constraints=[('unique_product_code','unique (default_code)','Product with this code already exist please enter unique code !.'),
+                      ('unique_ean13_code','unique (ean13)','Product with this EAN13 number already exist please enter unique code !.'),
+                      ]
+product_product()
+
+class product_template(osv.osv):
+    _name = "product.template"
+    _inherit = "product.template"
+
+    
+    def default_get(self, cr, uid, fields_list, context=None):
+        res = super(product_template, self).default_get(cr, uid, fields_list, context=context)
+        if 'cost_method' in fields_list:
+                res.update({
+                    'cost_method':'average',
+                })
+        if 'type' in fields_list:
+                res.update({
+                    'type':'product'
+                })
+        return res
+
+    _columns={
+              'description': fields.text('Description',translate=True),
+              
+              }
+
+    _defaults={
+               'description':'Demo Description'
+               }
+product_template()
+
+class product_serialize(osv.osv):
+    _name="product.serialize"
+    
+    _columns={
+              'product_id':fields.many2one('product.product','Product',required=True,ondelete="cascade"),
+              'name':fields.char('Serial No.',size=64,required=True,readonly=True),
+              'state':fields.boolean('Sold',readonly=True),
+              'inventory_id':fields.many2one('stock.inventory.line','Inventory Line',ondelete="cascade"),
+              }
+    
+    _defaults={
+               'state':False,
+               }
+    
+    _sql_constraints=[
+                      ('unique_product_serial_number', 'UNIQUE (product_id, name)', 'Product with this serial number already exist please enter unique serial number. !.')
+                      ]
+
+product_serialize()
+
+
+class product_inventory_serialize(osv.osv):
+    _name="product.inventory.serialize"
+    
+    _columns={
+              'name':fields.char('Serial No.',size=64,required=True),
+              'prod_inv_id':fields.many2one('stock.inventory.line','Inventory Line',ondelete="cascade"),
+              }
+    
+    
+    _sql_constraints=[
+                      ('unique_product_inventory_serial_number', 'UNIQUE (name)', 'Product with this serial number already exist please enter unique serial number. !.')
+                      ]
+
+product_inventory_serialize()
+    

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    
+    		<record id="group_serial_number" model="res.groups">
+		        <field name="name">User Serial Number</field>
+		       
+		    </record>
+    
+    		<record id="product_search_form_view_inherit_genius_1" model="ir.ui.view">
+	            <field name="name">product.search.form</field>
+	            <field name="model">product.product</field>
+	            <field name="inherit_id" ref="product.product_search_form_view"/>
+	            <field name="type">search</field>
+	            <field name="arch" type="xml">
+	            	<xpath expr="/search/field[@name='name']" position="after">
+	            		
+	            		<field name="type"/>
+	            		<field name="cost_method"/>
+	            		<newline/>
+	            		<field name="serialized"/>
+	            		<field name="ean13"/>
+	            		<field name="serialize_ids"/>
+	            	</xpath>
+	            </field>
+	        </record>
+	        
+	        <record id="product_normal_form_view_inherit_genius_1" model="ir.ui.view">
+	            <field name="name">product.normal.form</field>
+	            <field name="model">product.product</field>
+	            <field name="inherit_id" ref="product.product_normal_form_view"/>
+	            <field name="type">form</field>
+	            <field eval="7" name="priority"/>
+	            <field name="arch" type="xml">
+	            	<data>
+	            	      <field name='sale_ok' position="before">
+		                     <field name="serialized"/>
+		                     <label for="serialized"/>
+		                 </field>
+		                 
+		                 <xpath expr="//notebook" position="inside">
+		                     <page string="Serial Number" attrs="{'invisible':[('serialized','=',False)]}">
+		                     	<field name="serialize_ids" nolabel="1" colspan="4"/>
+		                     </page>
+		                     
+		                 </xpath>
+		                 
+	                 </data>
+	             </field>
+	         </record>
+	         
+	         
+	 <!--         <record id="product_product_tree_view_inherit_1" model="ir.ui.view">
+            <field name="name">product.product.tree</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_product_tree_view"/>
+            <field name="type">tree</field>
+            <field eval="7" name="priority"/>
+            <field name="arch" type="xml">
+            	<xpath expr="/tree/field[@name='name']" position="after">
+                    <field name="product_image" widget="image" height="1000" width="1000" />
+	         	</xpath>
+	         </field>
+	         </record>
+	         
+	         
+             -->
+            <record model="ir.ui.view" id="product_serialize_tree_view">
+                <field name="name">product.serialize.tree</field>
+                <field name="model">product.serialize</field>
+                <field name="type">tree</field>
+                <field name="arch" type="xml">
+                    <tree string="Serial Number">
+                        <field name="name"/>
+                        <field name="product_id"/>
+                        <field name="state"/>
+                    </tree>
+                </field>
+            </record>
+
+            <record model="ir.ui.view" id="product_serialize_form_view">
+                <field name="name">product.serialize.form</field>
+                <field name="model">product.serialize</field>
+                <field name="type">form</field>
+                <field name="arch" type="xml">
+                    <form string="form_string">
+                    	<group col="4" colspan="4">
+                    	<group col="2" colspan="2">
+                        <field name="name" select="1"/>
+                        <field name="product_id" />
+                        </group>
+                        <group col="2" colspan="2">
+                        <button name="%(update_serial_view)d"  string="Update Serial Number" type="action" colspan="2"/>
+                        <newline/>
+                        <field name="state" />
+                        </group>
+                        </group>
+                    </form>
+                </field>
+            </record>
+
+            <record model="ir.actions.act_window" id="action_product_serialize_tree_view">
+                <field name="name">Product Serial Number</field>
+                <field name="type">ir.actions.act_window</field>
+                <field name="res_model">product.serialize</field>
+                <field name="view_type">form</field>
+                <field name="view_mode">tree,form</field>
+                <field name="view_id" ref="product_serialize_tree_view"/>
+            </record>
+
+          <menuitem id="product_serial_menu" name="Serial Number" parent="product.prod_config_main" action="action_product_serialize_tree_view" groups="group_serial_number"/>
+
+            <record id="stock.view_normal_stock_property_form" model="ir.ui.view">
+            <field name="name">product.normal.stock.form.inherit</field>
+            <field name="model">product.product</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <group name="status" position="after">
+                    <group colspan="2" col="3">
+                        <separator string="Stocks" colspan="4"/>
+                        <field name="qty_available"/>
+                        
+                        <newline/>
+                        <field name="virtual_available"/>
+                    </group>
+                    <group colspan="2" col="2" name="lot" groups="base.group_extended">
+                        <separator string="Lots" colspan="4"/>
+                        <field name="track_production" />
+                        <field name="track_incoming" />
+                        <field name="track_outgoing" />
+                    </group>
+                </group>
+            </field>
+        </record>
+
+			
+            
+<!--                     <record model="ir.ui.view" id="product_inventory_serialize_tree_view">-->
+<!--                <field name="name">product.inventory.serialize.tree</field>-->
+<!--                <field name="model">product.inventory.serialize</field>-->
+<!--                <field name="type">tree</field>-->
+<!--                <field name="arch" type="xml">-->
+<!--                    <tree string="Product Serial Number">-->
+<!--                        <field name="name"/>-->
+<!--                        <field name="prod_inv_id" invisible="1"/>-->
+<!--                    </tree>-->
+<!--                </field>-->
+<!--            </record>-->
+<!---->
+<!--            <record model="ir.ui.view" id="product_inventory_serialize_form_view">-->
+<!--                <field name="name">product.inventory.serialize.form</field>-->
+<!--                <field name="model">product.inventory.serialize</field>-->
+<!--                <field name="type">form</field>-->
+<!--                <field name="arch" type="xml">-->
+<!--                    <form string="Product Serial Number">-->
+<!--                        <field name="name" select="1"/>-->
+<!--                        <field name="prod_inv_id" />-->
+<!--                    </form>-->
+<!--                </field>-->
+<!--            </record>-->
+<!---->
+<!--            <record model="ir.actions.act_window" id="action_product_inventory_serialize_tree_view">-->
+<!--                <field name="name">Product Serial Number</field>-->
+<!--                <field name="type">ir.actions.act_window</field>-->
+<!--                <field name="res_model">product.inventory.serialize</field>-->
+<!--                <field name="view_type">form</field>-->
+<!--                <field name="view_mode">tree,form</field>-->
+<!--                <field name="view_id" ref="product_inventory_serialize_tree_view"/>-->
+<!--            </record>-->
+<!--                      -->
+<!---->
+<!--				<menuitem id="product_inventory_serialize_menu" parent="stock.menu_stock_inventory_control" action="action_product_inventory_serialize_tree_view"/>-->
+<!--	                   -->
+    	
+    </data>
+</openerp>

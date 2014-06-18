@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    		<record model="ir.ui.view" id="view_vendor_receipt_form_inherit_genius_1">
+	            <field name="name">account.voucher.receipt.form</field>
+	            <field name="model">account.voucher</field>
+	            <field name="inherit_id" ref="account_voucher.view_vendor_receipt_form"/>
+	            <field name="type">form</field>
+	            <field name="arch" type="xml">
+	            	<data>
+	                   <field name="journal_id" position="after">
+	                   <field name="draft_cheque" />
+                              <field name="bank" />
+                              <separator string="Card Payment" colspan="6"/>
+                              <field name="card_holder" attrs="{'required':[('journal_id','in',['13','14','15'])]}"/>
+                              <field name="card_number" attrs="{'required':[('journal_id','in',['13','14','15'])]}"/>
+                              <field name="authorization" attrs="{'required':[('journal_id','in',['13','14','15'])]}"/>
+	                   </field>
+	                </data>
+	           	</field>
+           	</record>
+    </data>
+</openerp>

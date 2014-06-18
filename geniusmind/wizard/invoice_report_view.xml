@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <menuitem id="menu_finance_statistic_report_statement" name="Statistic Reports" parent="account.menu_finance_reports" sequence="300"/>
+        <record id="wizard_invoice_xls_report" model="ir.ui.view">
+            <field name="name">Invoice Reports</field>
+            <field name="model">annexurea</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Invoive Report">
+                	<group col="4" colspan="4">
+	                    <field name="start_period_id" colspan="2"/>
+	                    <field name="end_period_id" colspan="2"/>
+	                    <field name="data" filename="name" colspan="2"/>
+	                    <field name="name"   colspan="2" invisible="1"/>
+                    </group>
+                    <separator colspan="4"/>
+                    <label string="" colspan="2"/>
+                    <button special="cancel" string="Cancel" icon="gtk-cancel"/>
+                    <button name="report_get" string="Export" type="object" icon="gtk-print" default_focus="1"/>
+                </form>
+            </field>
+        </record>
+        
+        <record id="action_wizard_invoice_xls_report" model="ir.actions.act_window">
+            <field name="name">Annexure 2A</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">annexurea</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        <menuitem action="action_wizard_invoice_xls_report" id="menu_wizard_event_xls_export" parent="menu_finance_statistic_report_statement"/>
+        
+    	<record id="wizard_invoice_xls_report_b" model="ir.ui.view">
+            <field name="name">Invoice Reports</field>
+            <field name="model">annexureb</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Invoive Report">
+                	<group col="4" colspan="4">
+	                    <field name="start_period_id" colspan="2"/>
+	                    <field name="end_period_id" colspan="2"/>
+	                    <field name="data" filename="name" colspan="2"/>
+	                    <field name="name"   colspan="2" invisible="1"/>
+                    </group>
+                    <separator colspan="4"/>
+                    <label string="" colspan="2"/>
+                    <button special="cancel" string="Cancel" icon="gtk-cancel"/>
+                    <button name="report_get" string="Export" type="object" icon="gtk-print" default_focus="1"/>
+                </form>
+            </field>
+        </record>
+        
+        <record id="action_wizard_invoice_xls_report_b" model="ir.actions.act_window">
+            <field name="name">Annexure 2B</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">annexureb</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        <menuitem action="action_wizard_invoice_xls_report_b" id="menu_wizard_event_xls_export_b" parent="menu_finance_statistic_report_statement"/> 	
+    		
+    </data>
+</openerp>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+            <record id="view_partner_address_form1" model="ir.ui.view">
+            <field name="name">res.partner.address.form1</field>
+            <field name="model">res.partner.address</field>
+            <field name="type">form</field>
+            <field eval="8" name="priority"/>
+            <field name="arch" type="xml">
+                <form string="Address">
+                    <group colspan="4" col="6">
+                        <field name="partner_id" colspan="2"/>
+                        <field name="active"/>
+                        <field name="company_id" groups="base.group_multi_company" widget="selection" colspan="2"/>
+                        <newline/>
+                        <field name="name"/>
+                        <field domain="[('domain', '=', 'contact')]" name="title"/>
+                        <field name="function"/>
+                    </group>
+                      <group colspan="2" col="2">
+                        <separator string="Postal Address" colspan="4" col="4"/>
+                        <field name="type"/>
+                        <field name="street"/>
+                        <field name="street2"/>
+                        <field name="zip"/>
+                        <field name="city"/>
+                        <field name="country_id"/>
+                        <field name="state_id"/>
+                      </group>
+                      <group colspan="2" col="2">
+                        <separator string="Communication" colspan="4" col="4"/>
+                        <field name="phone"/>
+                        <field name="fax"/>
+                        <field name="mobile"/>
+                        <field name="email" widget="email"/>
+                     </group>
+                </form>
+            </field>
+        </record>
+	<record id="view_partner_form_genius_1" model="ir.ui.view">
+            <field name="name">res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+        	  <data>
+   		<xpath expr="//notebook/page[@string='Internal Notes']" position='replace'>
+			<page string="Notes">
+			<separator string='Internal Notes'/>
+	                            <field colspan="4" name="comment" nolabel="1"/>
+	                            <separator string='Printed Notes'/>
+	                            <field colspan="4" name="printed_note" nolabel="1"/>
+                                        </page>
+                     </xpath>
+		<field name='ref' position="replace">
+			<field name="reference_id"/>
+		</field>
+            </data>
+   	</field>
+    	</record>
+                <record model="ir.ui.view" id="shipping_zone_tree_view">
+                <field name="name">shipping.zone.tree</field>
+                <field name="model">shipping.zone</field>
+                <field name="type">tree</field>
+                <field name="arch" type="xml">
+                    <tree string="Shipping Zone">
+                        <field name="name"/>
+                        <field name="price"/>
+                    </tree>
+                </field>
+            </record>
+
+            <record model="ir.ui.view" id="shipping_zone_form_view">
+                <field name="name">shipping.zone.form</field>
+                <field name="model">shipping.zone</field>
+                <field name="type">form</field>
+                <field name="arch" type="xml">
+                    <form string="Shipping Zone">
+                        <field name="name" select="1"/>
+                        <field name="price" select="1"/>
+                    </form>
+                </field>
+            </record>
+
+            <record model="ir.actions.act_window" id="action_shipping_zone_tree_view">
+                <field name="name">Shipping Zone</field>
+                <field name="type">ir.actions.act_window</field>
+                <field name="res_model">shipping.zone</field>
+                <field name="view_type">form</field>
+                <field name="view_mode">tree,form</field>
+                <field name="view_id" ref="shipping_zone_tree_view"/>
+            </record>
+
+	<menuitem id="shipping_zone_menu" name="Shipping Zone" parent="base.menu_config_address_book" action="action_shipping_zone_tree_view"/>
+	         
+    </data>
+</openerp>

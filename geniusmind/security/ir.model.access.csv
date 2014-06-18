@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_shipping_zone user,shipping.zone,model_shipping_zone,base.group_user,1,1,1,1
+access_product_serialize user,product.serialize,model_product_serialize,base.group_user,1,1,1,1
+access_product_inventory_serialize user,product.inventory.serialize,model_product_inventory_serialize,base.group_user,1,1,1,1
+access_shipping_cost user,shipping.cost,model_shipping_cost,base.group_user,1,1,1,1
+access_type_invoice user,type.invoice,model_type_invoice,base.group_user,1,1,1,1
+access_partial_serialized_product user,partial.serialized.product,model_partial_serialized_product,base.group_user,1,1,1,1
+access_partial_serialized_line user,partial.serialized.line,model_partial_serialized_line,base.group_user,1,1,1,1
+access_serialized_product user,serialized.product,model_serialized_product,base.group_user,1,1,1,1

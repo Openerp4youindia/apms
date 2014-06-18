@@ -1,0 +1,663 @@
+<?xml version="1.0"?>
+<document filename="test.pdf">
+  <template pageSize="(650.0,950.0)" title="Test" author="Martin Simon" allowSplitting="40">
+    <pageTemplate id="first">
+    <pageGraphics>
+      	<place x="25.0" y="-2.0cm" width="600" height="200">
+      		<blockTable colWidths="300.0,300.0" style="Table9">
+      <tr>
+        <td>
+          <para style="terp_default_9">Customer Signature &amp; Seal:</para>
+        </td>
+        <td>
+          <para style="terp_default_Right_9">For 4 Genius Minds</para>
+        </td>
+      </tr>
+    </blockTable>
+    <para style="Standard">
+      <font color="white"> </font>
+    </para>
+    <para style="Standard">
+      <font color="white"> </font>
+    </para>
+    <blockTable colWidths="300.0,300.0" style="Table9">
+      <tr>
+        <td>
+          <para style="terp_default_9">----------------------------------------------------------------------</para>
+          <para style="terp_default_Bold_9">Accepting the Invoice signifies acceptance</para>
+          <para style="terp_default_Bold_9">of the Terms and Conditions mentioned overleaf </para>
+        </td>
+        <td>
+          <para style="terp_default_Right_9">----------------------------------------------------------------------</para>
+          <para style="terp_default_Bold_Right_9">Authorized Signatory</para>
+        </td>
+      </tr>
+    </blockTable>
+    <para style="Standard">
+      <font color="white"> </font>
+    </para>
+    <para style="Standard">
+      <font color="white"> </font>
+    </para>
+    <blockTable colWidths="600.0" style="Table10">
+    <tr>
+       <td>
+       	 <para style="terp_default_Centre_9">K-1/17 Chittarajan Park, New Delhi, 110019, India. Phone: +91 11 46566940. Email: mail@4gm.in</para>
+     
+       </td>
+    </tr>
+    </blockTable>
+      	</place>
+      </pageGraphics>
+      <frame id="first" x1="25.0" y1="150.0" width="600" height="750"/>
+    </pageTemplate>
+    <pageTemplate id="second">
+      <frame id="second" x1="25.0" y1="25.0" width="600" height="900"/>
+    </pageTemplate>
+  </template>
+  <stylesheet>
+    <blockTableStyle id="Standard_Outline">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table1">
+      <blockTopPadding value="0"/>
+      <blockBottomPadding value="0"/>
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBEFORE" colorName="#ffffff" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#ffffff" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#ffffff" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#ffffff" start="1,0" stop="1,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#ffffff" start="1,0" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#ffffff" start="1,0" stop="1,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#ffffff" start="1,-1" stop="1,-1"/>
+      
+    </blockTableStyle>
+	
+	<blockTableStyle id="club">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <blockLeftPadding value="0.0"/>
+      <lineStyle kind="LINEBEFORE" colorName="#ffffff" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#ffffff" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#ffffff" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#ffffff" start="0,-1" stop="0,-1"/>
+      
+    </blockTableStyle>
+    
+    <blockTableStyle id="Table31">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBEFORE" colorName="#ccccff" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#ccccff" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#ccccff" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#ccccff" start="1,0" stop="1,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#ccccff" start="1,0" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#ccccff" start="1,0" stop="1,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#ccccff" start="1,-1" stop="1,-1"/>
+     <blockBackground colorName="#ccccff" start="0,0" stop="-1,-1"/>
+
+    </blockTableStyle>
+    <blockTableStyle id="Table32">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBEFORE" colorName="#ffffff" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#ffffff" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#ffffff" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#ffffff" start="1,0" stop="1,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#ffffff" start="1,0" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#ffffff" start="1,0" stop="1,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#ffffff" start="1,-1" stop="1,-1"/>
+      
+    </blockTableStyle>
+    <blockTableStyle id="Table33">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBEFORE" colorName="#ccccff" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#ccccff" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#ccccff" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#ccccff" start="1,0" stop="1,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#ccccff" start="1,0" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#ccccff" start="1,0" stop="1,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#ccccff" start="1,-1" stop="1,-1"/>
+      <blockBackground colorName="#ccccff" start="0,0" stop="-1,-1"/>
+      
+    </blockTableStyle>
+		
+	  <blockTableStyle id="Table2">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBEFORE" colorName="#FF8000" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#FF8000" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#FF8000" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#FF8000" start="1,0" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#FF8000" start="1,0" stop="1,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#FF8000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#FF8000" start="2,0" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#FF8000" start="2,0" stop="2,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#FF8000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#FF8000" start="3,0" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#FF8000" start="3,0" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#FF8000" start="3,0" stop="3,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#FF8000" start="3,-1" stop="3,-1"/>
+      
+      <blockBackground colorName="#FF8000" start="0,0" stop="-1,-1"/>
+     
+    </blockTableStyle>
+    
+    <blockTableStyle id="Table3">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBEFORE" colorName="#A4A4A4" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#A4A4A4" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#A4A4A4" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#A4A4A4" start="1,0" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#A4A4A4" start="1,0" stop="1,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#A4A4A4" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#A4A4A4" start="2,0" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#A4A4A4" start="2,0" stop="2,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#A4A4A4" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#A4A4A4" start="3,0" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#A4A4A4" start="3,0" stop="3,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#A4A4A4" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#A4A4A4" start="4,0" stop="4,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#A4A4A4" start="4,0" stop="4,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#A4A4A4" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#A4A4A4" start="5,0" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#A4A4A4" start="5,0" stop="5,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#A4A4A4" start="5,0" stop="5,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#A4A4A4" start="5,-1" stop="5,-1"/>
+      
+      <blockBackground colorName="#A4A4A4" start="0,0" stop="-1,-1"/>
+     
+    </blockTableStyle>
+    
+    <blockTableStyle id="Table4">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBEFORE" colorName="#ffffff" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#ffffff" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#ffffff" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#ffffff" start="1,0" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#ffffff" start="1,0" stop="1,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#ffffff" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#ffffff" start="2,0" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#ffffff" start="2,0" stop="2,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#ffffff" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#ffffff" start="3,0" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#ffffff" start="3,0" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#ffffff" start="3,0" stop="3,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#ffffff" start="3,-1" stop="3,-1"/>
+           
+    </blockTableStyle>
+    
+    <blockTableStyle id="Table5">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBEFORE" colorName="#ffffff" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#ffffff" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#ffffff" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#ffffff" start="1,0" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#ffffff" start="1,0" stop="1,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#ffffff" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#ffffff" start="2,0" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#ffffff" start="2,0" stop="2,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#ffffff" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#ffffff" start="3,0" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#ffffff" start="3,0" stop="3,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#ffffff" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#ffffff" start="4,0" stop="4,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#ffffff" start="4,0" stop="4,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#ffffff" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#ffffff" start="5,0" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#ffffff" start="5,0" stop="5,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#ffffff" start="5,0" stop="5,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#ffffff" start="5,-1" stop="5,-1"/>
+           
+    </blockTableStyle>
+    
+    <blockTableStyle id="Table6">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBEFORE" colorName="#A4A4A4" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#A4A4A4" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#A4A4A4" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#A4A4A4" start="1,0" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#A4A4A4" start="1,0" stop="1,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#A4A4A4" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#A4A4A4" start="2,0" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#A4A4A4" start="2,0" stop="2,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#A4A4A4" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#A4A4A4" start="3,0" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#A4A4A4" start="3,0" stop="3,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#A4A4A4" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#A4A4A4" start="4,0" stop="4,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#A4A4A4" start="4,0" stop="4,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#A4A4A4" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#A4A4A4" start="5,0" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#A4A4A4" start="5,0" stop="5,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#A4A4A4" start="5,0" stop="5,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#A4A4A4" start="5,-1" stop="5,-1"/>
+      
+      <blockBackground colorName="#A4A4A4" start="0,0" stop="-1,-1"/>
+     
+    </blockTableStyle>
+    <blockTableStyle id="Table7">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBEFORE" colorName="#A4A4A4" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#A4A4A4" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#A4A4A4" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#A4A4A4" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#A4A4A4" start="1,0" stop="1,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#A4A4A4" start="1,0" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#A4A4A4" start="1,0" stop="1,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#A4A4A4" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#A4A4A4" start="2,0" stop="2,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#A4A4A4" start="2,0" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#A4A4A4" start="2,0" stop="2,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#A4A4A4" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#A4A4A4" start="3,0" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#A4A4A4" start="3,0" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#A4A4A4" start="3,0" stop="3,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#A4A4A4" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#A4A4A4" start="4,0" stop="4,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#A4A4A4" start="4,0" stop="4,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#A4A4A4" start="4,0" stop="4,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#A4A4A4" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#A4A4A4" start="5,0" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#A4A4A4" start="5,0" stop="5,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#A4A4A4" start="5,0" stop="5,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#A4A4A4" start="5,-1" stop="5,-1"/>
+      <blockBackground ROWBACKGROUNDS="#cccfff;#fffccc" start="0,1" stop="-1,-1"/>
+      
+    </blockTableStyle>
+    <blockTableStyle id="Table8">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBEFORE" colorName="#D8D8D8" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#D8D8D8" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#D8D8D8" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#A4A4A4" start="1,0" stop="1,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#D8D8D8" start="1,0" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#D8D8D8" start="1,0" stop="1,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#D8D8D8" start="1,-1" stop="1,-1"/>
+      <blockBackground colorName="#D8D8D8" start="0,0" stop="-1,-1"/>
+      
+    </blockTableStyle>
+    
+     <blockTableStyle id="Table99">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBEFORE" colorName="#ffffff" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#A4A4A4" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#ffffff" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#ffffff" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#A4A4A4" start="0,1" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#A4A4A4" start="0,1" stop="0,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#ffffff" start="0,-1" stop="0,-1"/>
+      
+    </blockTableStyle>
+    
+    <blockTableStyle id="Table9">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBEFORE" colorName="#ffffff" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#ffffff" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#ffffff" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#ffffff" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#ffffff" start="0,1" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#ffffff" start="0,1" stop="0,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#ffffff" start="0,-1" stop="0,-1"/>
+      
+    </blockTableStyle>
+    <blockTableStyle id="Table10">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBEFORE" colorName="#ffffff" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#ffffff" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#ffffff" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#ffffff" start="0,-1" stop="0,-1"/>
+      
+    </blockTableStyle>
+    <blockTableStyle id="Table11">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBEFORE" colorName="#ffffff" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#ffffff" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#ffffff" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#ffffff" start="0,-1" stop="0,-1"/>
+      
+    </blockTableStyle>
+    <initialize>
+      <paraStyle name="all" alignment="justify"/>
+    </initialize>
+    <paraStyle name="P1" fontName="Times-Roman" alignment="RIGHT"/>
+    <paraStyle name="P2" fontName="Times-Roman" alignment="CENTER"/>
+    <paraStyle name="P3" fontName="Times-Roman" fontSize="16.0" leading="20" alignment="RIGHT"/>
+    <paraStyle name="P4" fontName="Times-Roman" alignment="CENTER"/>
+    <paraStyle name="term_9" rightIndent="0.0" leftIndent="0.0" fontName="Helvetica" fontSize="9.0" leading="11" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0" textColor="#A4A4A4"/>
+    <paraStyle name="term_Bold_9" rightIndent="0.0" leftIndent="0.0" fontName="Helvetica-Bold" fontSize="9.0" leading="11" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0" textColor="#A4A4A4"/>
+    <paraStyle name="terp_default_8" rightIndent="0.0" leftIndent="0.0" fontName="Helvetica" fontSize="8.0" leading="10" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_9" rightIndent="0.0" leftIndent="0.0" fontName="Helvetica" fontSize="9.0" leading="11" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Bold_9" rightIndent="0.0" leftIndent="-3.0" fontName="Helvetica-Bold" fontSize="9.0" leading="11" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Centre_9" rightIndent="0.0" leftIndent="0.0" fontName="Helvetica" fontSize="9.0" leading="11" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Bold_Centre_9" rightIndent="0.0" leftIndent="0.0" fontName="Helvetica-Bold" fontSize="16.0" leading="25" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Right_9" rightIndent="0.0" leftIndent="0.0" fontName="Helvetica" fontSize="9.0" leading="11" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Bold_Right_9" rightIndent="0.0" leftIndent="-3.0" fontName="Helvetica-Bold" fontSize="9.0" leading="11" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="Standard" fontName="Times-Roman"/>
+    <paraStyle name="Heading" fontName="Helvetica" fontSize="14.0" leading="17" spaceBefore="12.0" spaceAfter="6.0"/>
+    <paraStyle name="Text body" fontName="Times-Roman" spaceBefore="0.0" spaceAfter="6.0"/>
+    <paraStyle name="List" fontName="Times-Roman" spaceBefore="0.0" spaceAfter="6.0"/>
+    <paraStyle name="Caption" fontName="Times-Roman" fontSize="12.0" leading="15" spaceBefore="6.0" spaceAfter="6.0"/>
+    <paraStyle name="Index" fontName="Times-Roman"/>
+    <paraStyle name="Table Contents" fontName="Helvetica-Bold" fontSize="9.0" />
+    <paraStyle name="P5" fontName="Helvetica-Bold" fontsize="9.0"/>
+    <paraStyle name="terp_default_2" rightIndent="0.0" leftIndent="0.0" fontName="Helvetica" fontSize="2.0" leading="3" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <images>
+    </images>
+  </stylesheet>
+  <story>
+  	<para style="terp_default_8">[[ repeatIn(objects,'o') ]]</para>
+    <para style="terp_default_8">[[ setLang(o.partner_id.lang) ]]</para>
+    
+	<blockTable colWidths="300.0,300.0" style="Table1">
+      <tr>
+        <td>
+        <spacer length="0.07cm"/>
+       	 <illustration height="65.0" width="275.0">
+        <image x="0" y="0" file="addons/geniusmind/image/logo.jpg" height="65.0" width="275.0"/>
+        </illustration>
+       </td>
+        <td>
+        <para style="terp_default_8">
+            <font color="white"> </font>
+          </para> 
+        <illustration height="50.0" width="150.0">
+		  <image x="80.0" y="0" file="addons/geniusmind/image/purchase.jpg" height="50.0" width="150.0"/>
+		</illustration>
+        </td>
+      </tr>
+    </blockTable>
+    
+    <blockTable colWidths="300.0,300.0" style="Table1">
+      <tr>
+        <td>
+       	 <illustration height="35.0" width="100.0">
+        <image x="0" y="0" file="addons/geniusmind/image/logo2.jpg" height="35.0" width="100.0"/>
+        </illustration>
+       </td>
+        <td>
+        	<para style="terp_default_Bold_Right_9">TIN: 07060314622</para>
+        	<para style="terp_default_Bold_Right_9">Service Tax No: AAAFZ3871CSD002</para>
+        	<para style="terp_default_Bold_Right_9">PO No: [[ o.name or '']]</para>
+        	<para style="terp_default_Bold_Right_9">Date: [[ time.strftime('%d-%b-%Y', time.strptime(o.date_order, '%Y-%m-%d')) ]]</para>
+        	
+        </td>
+      </tr>
+    </blockTable>
+    
+    <para style="terp_default_8">
+            <font color="white"> </font>
+          </para>    
+     <para style="terp_default_8">
+            <font color="white"> </font>
+          </para>
+	<blockTable colWidths="140.0,230.0,230.0" style="Table2">
+      <tr>
+        <td>
+          <para style="terp_default_Bold_9" textColor="white">Supplier:</para>
+        </td>
+        <td>
+          <para style="terp_default_Bold_9" textColor="white">Billing Address:</para>
+        </td>
+        <td>
+          <para style="terp_default_Bold_9" textColor="white">Shipping Address:</para>
+        </td>
+      </tr>
+    </blockTable>
+    
+    <blockTable colWidths="140.0,230.0,230.0" style="Table4">
+      <tr>
+        <td>
+         <para style="terp_default_Bold_9">[[ o.partner_id and o.partner_id.name or '']] [[ o.partner_id and o.partner_id.title and o.partner_id.title.name or '']]</para>
+        </td>
+        <td>
+         <para style="terp_default_9">[[ o.partner_address_id and o.partner_address_id.street or '']]</para>
+         <para style="terp_default_9">[[ o.partner_address_id and o.partner_address_id.street2 or '']]</para>
+         <para style="terp_default_9">[[ o.partner_address_id and o.partner_address_id.zip or '']] [[ o.partner_address_id and o.partner_address_id.city or '']]</para>
+         <para style="terp_default_9">[[ o.partner_address_id and o.partner_address_id.state_id and o.partner_address_id.state_id.name or '']] [[ o.partner_address_id and o.partner_address_id.country_id and o.partner_address_id.country_id.name or '']]</para>
+         
+        </td>
+        <td>
+          <para style="terp_default_9">[[ o.warehouse_id and o.warehouse_id.lot_input_id.address_id and o.warehouse_id.lot_input_id.address_id.street or '']]</para>
+          <para style="terp_default_9">[[ o.warehouse_id and o.warehouse_id.lot_input_id.address_id and o.warehouse_id.lot_input_id.address_id.street2 or '']]</para>       
+          <para style="terp_default_9">[[ o.warehouse_id and o.warehouse_id.lot_input_id.address_id and o.warehouse_id.lot_input_id.address_id.zip or '']] [[ o.warehouse_id and o.warehouse_id.lot_input_id.address_id and o.warehouse_id.lot_input_id.address_id.city or '']]</para>       
+          <para style="terp_default_9"> [[ o.warehouse_id and o.warehouse_id.lot_input_id.address_id and o.warehouse_id.lot_input_id.address_id.state_id and o.warehouse_id.lot_input_id.address_id.state_id.name or '']] [[ o.warehouse_id and o.warehouse_id.lot_input_id.address_id and o.warehouse_id.lot_input_id.address_id.country_id and o.warehouse_id and o.warehouse_id.lot_input_id.address_id and o.warehouse_id.lot_input_id.address_id.country_id.name or '']]</para>        
+          </td>
+      </tr>
+    </blockTable>
+    <para style="terp_default_8">
+            <font color="white"> </font>
+          </para>
+       
+    
+    <blockTable colWidths="140.0,230.0,230.0" style="Table3">
+      <tr>
+        <td>
+          <para style="terp_default_Bold_9" textColor="white">Contact:</para>
+        </td>
+        <td>
+          <para style="terp_default_Bold_9" textColor="white">Payment Terms:</para>
+        </td>
+        <td>
+          <para style="terp_default_Bold_9" textColor="white">Party Tin:</para>
+        </td>
+      </tr>
+    </blockTable>
+    
+    <blockTable colWidths="140.0,230.0,230.0" style="Table5">
+      <tr>
+      	<td>
+          <para style="terp_default_9">[[ o.contact_address_id and o.contact_address_id.title and o.contact_address_id.title.name or '']] [[ o.contact_address_id and o.contact_address_id.name or '']]</para>
+          <para style="terp_default_9">[[ o.contact_address_id and o.contact_address_id.phone or '']]</para>
+          <para style="terp_default_9">[[ o.contact_address_id and o.contact_address_id.phone2 or '']]</para>
+          <para style="terp_default_9">[[ o.contact_address_id and o.contact_address_id.mobile or '']]</para>
+          <para style="terp_default_9">[[ o.contact_address_id and o.contact_address_id.email or '']]</para>
+        </td>
+        <td>
+          <para style="terp_default_9">[[ o.payment_term and o.payment_term.name or '']]</para>
+        </td>
+        <td>
+          <para style="terp_default_9">[[ o.partner_id and o.partner_id.tin_no or '']]</para>
+        </td>
+      </tr>
+    </blockTable>
+    <para style="terp_default_8">
+            <font color="white"> </font>
+          </para>
+       
+    <blockTable colWidths="100.0,270.0,50.0,65.0,115.0" style="Table6">
+      <tr>
+        <td>
+          <para style="terp_default_Bold_9" textColor="white">Product Code</para>
+        </td>
+        <td>
+          <para style="terp_default_Bold_9" textColor="white">Description</para>
+        </td>
+        <td>
+          <para style="terp_default_Bold_Right_9" textColor="white">Quantity</para>
+        </td>
+        <td>
+          <para style="terp_default_Bold_Right_9" textColor="white">Price</para>
+        </td>
+        <td>
+          <para style="terp_default_Bold_Right_9" textColor="white">Subtotal</para>
+        </td>
+      </tr>
+    </blockTable>
+    <section>
+      <para style="terp_default_2">[[ repeatIn(o.order_line,'l') ]]</para>
+    <blockTable colWidths="100.0,270.0,50.0,65.0,115.0" style="Table7">
+      <tr>
+      	<td>
+          <para style="terp_default_9">[[ l.product_id and l.product_id.default_code  or '' ]]</para>
+        </td>
+        <td>
+          <para style="terp_default_Bold_9">[[ l.product_id and l.product_id.name  or '' ]]</para>
+          <para style="terp_default_9">[[ l.product_id and l.product_id.description  or '' ]]</para>
+          <image x="0.0cm" y="0.0cm" width="80.0" height="40.0" >[[ l.product_id and l.product_id.product_image or removeParentNode('image') ]]</image>
+        </td>
+        <td>
+          <para style="terp_default_Right_9">[[ formatLang(l.product_qty)]] </para>
+        </td>
+        <td>
+          <para style="terp_default_Right_9">[[ formatLang(l.price_unit) ]]</para>
+        </td>
+        <td>
+          <para style="terp_default_Right_9">[[ formatLang(l.price_subtotal, dp='Account') ]] [[ o.pricelist_id.currency_id.symbol ]]</para>
+        </td>
+      </tr>
+    </blockTable>
+   </section>
+   <spacer length="0.05cm"/>
+   <blockTable colWidths="600.0" style="club">
+   <tr>
+   	<td>
+    <blockTable colWidths="485.0,115.0" style="Table8">
+      <tr>
+        <td>
+          <para style="terp_default_Right_9">Untaxed</para>
+        </td>
+        <td>
+          <para style="terp_default_Right_9">[[ formatLang(o.amount_untaxed, digits=get_digits(dp='Account')) ]] [[ o.pricelist_id.currency_id.symbol ]]</para>
+        </td>
+      </tr>
+    </blockTable>
+    <spacer length="0.01cm"/>
+    <blockTable colWidths="485.0,115.0" style="Table99">
+      <tr>
+        <td>
+          <para style="terp_default_Right_9">Tax</para>
+        </td>
+        <td>
+          <para style="terp_default_Right_9">[[ formatLang(o.amount_tax, digits=get_digits(dp='Account')) ]] [[ o.pricelist_id.currency_id.symbol ]]</para>
+        </td>
+      </tr>
+    </blockTable>
+    <spacer length="0.01cm"/>
+    <blockTable colWidths="485.0,115.0" style="Table8">
+      <tr>
+        <td>
+          <para style="terp_default_Bold_Right_9">Total</para>
+        </td>
+        <td>
+          <para style="terp_default_Bold_Right_9">[[ formatLang(o.amount_total, digits=get_digits(dp='Account')) ]] [[ o.pricelist_id.currency_id.symbol ]]</para>
+        </td>
+      </tr>
+    </blockTable>
+    </td>
+    </tr>
+    </blockTable>
+    <spacer length="0.1cm"/>
+	<blockTable colWidths="100.0,500.0" style="Table9">
+      <tr>
+        <td>
+       	 <para style="terp_default_Bold_9">Amount in words:</para>
+       </td>
+        <td>
+          <para style="terp_default_9">[[ convert( o.amount_total ,o.pricelist_id.currency_id.name) ]]</para>
+        </td>
+      </tr>
+    </blockTable>
+    <spacer length="0.1cm"/>
+    <blockTable colWidths="600.0" style="Table10">
+    <tr>
+       <td>
+       	 <para style="terp_default_Bold_9">Printed Notes:</para>
+     
+       	 <para style="terp_default_8">[[ o.printed_note or '' ]]</para>
+       </td>
+    </tr>
+    </blockTable>
+
+<setNextTemplate name="second"/>
+  		<nextFrame/>
+  		<spacer length="1.0cm"/>
+  		<para style="terp_default_Bold_Centre_9">Terms &amp; Conditions</para>
+
+  		<blockTable colWidths="300.0,300.0" style="Table9">
+	    <tr>
+	       <td>
+	       	 <para style="terp_default_Bold_9">Delhi</para>
+	       	 <para style="terp_default_Bold_9">Operating Hours Monday - Saturday 11:00 AM - 7:00 PM</para>
+	       	 <para style="terp_default_Bold_9">Operating Hours Monday - Saturday 11:30 AM – 6:30 PM</para>
+	     	</td>
+	     	<td>
+	       	 <para style="terp_default_Bold_Right_9">(All Public Holidays Closed) Sales </para>
+	       	 <para style="terp_default_Bold_Right_9">All Public Holidays Closed) Service</para>
+	       </td>
+	    </tr>
+	    <tr>
+	       <td>
+	       	 <para style="terp_default_Bold_9">Bangaluru</para>
+	       	 <para style="terp_default_Bold_9">Operating Hours Monday - Saturday 10:30 AM - 7:00 PM</para>
+	       	 <para style="terp_default_Bold_9">Operating Hours Monday - Saturday 10:00 AM – 5:30 PM</para>
+	     	</td>
+	     	<td>
+	       	 <para style="terp_default_Bold_Right_9">(All Public Holidays Closed) Sales </para>
+	       	 <para style="terp_default_Bold_Right_9">All Public Holidays Closed) Service</para>
+	       </td>
+	    </tr>
+    </blockTable>
+    <blockTable colWidths="600.0" style="Table10">
+    <tr>
+       <td>
+    <para style="term_9">Apple Technical Support provides 90 Days Telephonic Support with-in 1st year.</para>
+    <para style="term_Bold_9">ALL UPGRADES UNLESS MENTIONED OTHER WISE ARE THIRD PARTY WITH WARRANTY PROVIDED BY 4 GENIUS MINDS AND NOT APPLE.</para>
+	<para style="term_9">One visit free with in 90 days of Purchase by 4 Genius Minds **</para>
+	<para style="term_9">All Technical Support is provided on Phone &amp; Through Screen Sharing</para>    
+	<para style="term_Bold_9">Please refer to <font color="Blue">http://www.apple.com/legal/warranty/</font> for more information.</para>
+	
+	<para style="term_9">Advance one taken shall not be refundable under any circumstances.</para>
+	<para style="term_Bold_9">All Claims shall be made to Apple India Private Limited &amp; not 4 Genius Minds.</para>
+	<para style="term_9">All disputes sale subject to Delhi jurisdiction only.</para>
+	<para style="term_9">Service Charges may Change without prior information to clients.</para>
+	<para style="term_9">Turn over time for a Technical support call is usually 4-business hrs and 24-business hrs for an onsite visit.</para>
+	<para style="term_9">Material once purchased shall not be returned under any circumstances 4 Genius Minds is not Liable to replace any defective unit unless approved by Apple Inc.</para>
+	
+	<para style="term_9">All Payment Terms are 100 % against Delivery (By Cash / DD/ Credit Card / Current Date Cheque) unless mention on the invoice otherwise.</para>
+		<para style="term_Bold_9">Cheque Bounce will attract [[ o.currency_id.symbol ]] 700 Service &amp; Inconvenience Charge.</para>
+		<para style="term_Bold_9">4 Genius Minds Does not provide any Technical Support for iPods, iPhone &amp; iPads.</para>
+		<para style="term_Bold_9">All iPods, iPhone &amp; iPads support is provided by Apple Customer Care at 1800 4250744.</para>
+		<para style="term_9">4 Genius Minds is not responsible for making any third party application / hardware (Printer, Camera, or any other device) to be made to work with any apple products. Any claims for 3rd party products cannot be made to 4 genius minds under any circumstances.</para>
+		<para style="term_9">Onsite Visit is Only for Delhi region (Incase you are from any other area Please confirm if you are eligible)</para>
+		<para style="term_9">4 Genius Minds does provide support for Microsoft Windows or any applications for the same. We do not provide support for any other Operating System other than of Apple Macintosh.</para>
+		<para style="term_Bold_9">Any Material will remain the property of 4 Genius Minds until full payment is made for the Invoice &amp; 4 Genius Minds reserves the right to collect it back if payment is not made and forfeit the amount paid.</para>
+		<para style="term_9">For Onsite Calls for hardware customer’s are required to book a call at 1800 4250744 only after receiving the complaint from apple can 4 genius Minds attend the onsite call.</para>
+		<para style="term_9">Onsite visit is not applicable for any special discount, scheme with any other special pricing availed.</para>
+		<para style="term_Bold_9">Apple India and not 4 Genius Minds only take all Machine replacement request</para>
+		
+	    <spacer length="1.0cm"/>
+		<para style="terp_default_Bold_Centre_9">Service Terms</para>
+		<para style="term_Bold_9">Data must be backed up before machine is sent for service. 4 Genius Minds will not be responsible for any data loss.</para>
+		<para style="term_9">All service fee and repairs charges are payable 100% advance</para>
+		<para style="term_9">Service Charges may Change without prior information to clients.</para>
+		<para style="term_Bold_9">The Customer must receive the Service Report when the product is given for warranty repairs at Apple Authorized Service Center (AASP) and the Customer must verify the contents of the Service report.</para>
+		<para style="term_9">The Customer must produce the Original Service Report at the time of taking the delivery. The AASP reserves the right to refuse delivery upon non production of the <font size="7">The defective parts replaced while undertaking the repairs of the product under warranty will not be returned to the Customer. </font></para>
+		<para style="term_9">The charges for labor as well as spares used for non-warranty repair shall be as per the applicable price lists approved and recommended by Apple. </para>
+		<para style="term_9">The AASP shall make all efforts to ensure that the product is repaired within 3 working days from the receipt of faulty product. At times however, due to non- availability/shortage of critical spare parts or complicated fault, the repair turn around time may take longer than the indicated while accepting the machine for repair. </para>
+		<para style="term_9"><font size="7">The AASP will not be responsible for any loss/losses whatsoever in the event of the delay in repair for such aforementioned reasons.</font> </para>
+		<para style="term_Bold_9">The AASP is not liable for any delays, non performance, failure or non delivery of the product due to contingencies arising from any force measure, act of God, storm, earthquake, accident, strikes, lockout, industrial dispute, labor trouble, transportation embargo, imminence or the existence of any state emergency, war, civil commotion right, approval or imposition of sanctions or any measure taken by government which renders it impossible or impractical for AASP to perform supply, service or deliver the Product to the Customer.</para>
+		<para style="term_9">The Estimate price given at the time of acceptance of the Product to repairs are Provisional and may vary at the time of detailed inspection. Should the final expected charges be more than the initial estimate, the AASP will proceed only after taking the approval of the Customer.</para>
+		<para style="term_Bold_9">In the event the final estimate is not approved by the customer within 7 days, the product will be returned in "as is condition (partly repaired/unrepaired)" and the AASP will not be responsible for the same whatsoever.</para>
+		<para style="term_Bold_9">The customer shall take the delivery of the Product within 15 (Fifteen) days of written intimation from AASP. In the event the delivery is not taken by the customer, the AASP reserves the right to Auction the Product to recover the repair/ storage charges.(There is a STORAGE FEE is ₹ 100 per day.)</para>
+		<para style="term_9">All claims and disputes are subject to Delhi Jurisdiction Only</para>
+		<para style="term_9">Customers are requested to contact apple care for iPod, iPhone &amp; iPad Technical Support &amp; any delay in repairs due to non availability of spares. </para>
+		<para style="term_9">The AASP shall not be obliged to undertake repair of products found waterlogged, liquid damaged or tempered. </para>
+		</td>
+    </tr>
+    </blockTable>
+  </story>
+</document>

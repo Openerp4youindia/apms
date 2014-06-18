@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    
+	<!-- 	<record model="ir.ui.view" id="view_document_file_form_inherit_1">
+	        <field name="name">ir.attachment</field>
+	        <field name="model">ir.attachment</field>
+	        <field name="inherit_id" ref="base.view_attachment_form"/>
+	        <field name="priority" eval="1"/>
+	        <field name="type">form</field>
+	        <field name="arch" type="xml">
+	        	<xpath expr="/form/notebook/page[@string='Attachment']/group/group/field[@name='res_name']" position="after">
+	        		<field name="auto_attach"/>
+	        	</xpath>
+	        </field>
+		</record>
+		
+		-->
+		
+		<record id="act_sale_order_quotation_mail" model="ir.actions.act_window">
+            <field name="name">Sale Order Quotation Email</field>
+            <field name="res_model">mail.compose.message</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="src_model">sale.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="mail.email_compose_message_wizard_form"/>
+            <field name="context" eval="{'mail.compose.message.mode':'mail', 'mail.compose.template_id' : ref('geniusmind.email_template_edi_sale_quotation')}"/>
+            <field name="target">new</field>
+            <field name="multi">True</field>
+       </record>
+			        
+	    <record model="ir.values" id="action_sale_order_quotation_mail">
+            <field name="model_id" ref="sale.model_sale_order" />
+            <field name="name">Sale Order Mail</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' + str(ref('act_sale_order_quotation_mail'))" />
+            <field name="key">action</field>
+            <field name="model">sale.order</field>
+            
+        </record>
+		
+		<record id="act_sale_order_mail" model="ir.actions.act_window">
+            <field name="name">Sale Order Email</field>
+            <field name="res_model">mail.compose.message</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="src_model">sale.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="mail.email_compose_message_wizard_form"/>
+            <field name="context" eval="{'mail.compose.message.mode':'mail', 'mail.compose.template_id' : ref('geniusmind.email_template_edi_sale_order')}"/>
+            <field name="target">new</field>
+            <field name="multi">True</field>
+       </record>
+			        
+	    <record model="ir.values" id="action_sale_order_mail">
+            <field name="model_id" ref="sale.model_sale_order" />
+            <field name="name">Sale Order Mail</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' + str(ref('act_sale_order_mail'))" />
+            <field name="key">action</field>
+            <field name="model">sale.order</field>
+            
+        </record>
+			    
+    </data>
+</openerp>

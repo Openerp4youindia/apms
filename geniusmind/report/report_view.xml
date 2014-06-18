@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+			<report auto="False" id="genius_delivery_challan_id"  model="stock.picking" name="genius.delivery.challan" rml="geniusmind/report/delivery_challan.rml" string="Genius Delivery Challan" header="False"/>
+			
+			<report auto="False" id="genius_purchase_order_id"  model="purchase.order" name="genius.purchase.order" rml="geniusmind/report/purchase_order.rml" string="Genius Purchase Order" header="False" menu="False"/>
+			
+			<report auto="False" id="genius_sale_quotation_id"  model="sale.order" name="genius.sale.quotation" rml="geniusmind/report/sale_quotation.rml" string="Genius Sale Quotation" header="False" menu="False"/>
+			
+			<report auto="False" id="genius_sale_order_id"  model="sale.order" name="genius.sale.order" rml="geniusmind/report/sale_order.rml" string="Genius Sale Order" header="False" menu="False"/>
+			
+			<report auto="False" id="genius_tax_invoice_delhi_id"  model="account.invoice" name="genius.tax.invoice.delhi" rml="geniusmind/report/tax_invoice_delhi.rml" string="Genius Tax Invoice" header="False" menu="False"/>
+			
+			<report auto="False" id="genius_retail_invoice_delhi_id"  model="account.invoice" name="genius.retail.invoice.delhi" rml="geniusmind/report/retail_invoice_delhi.rml" string="Genius Retail Invoice" header="False" menu="False"/>
+			
+			<report auto="False" id="genius_tax_invoice_bang_id"  model="account.invoice" name="genius.tax.invoice.bang" rml="geniusmind/report/tax_invoice_bang.rml" string="Genius Tax Invoice" header="False" menu="False"/>
+			
+			<report auto="False" id="genius_retail_invoice_bang_id"  model="account.invoice" name="genius.retail.invoice.bang" rml="geniusmind/report/retail_invoice_bang.rml" string="Genius Retail Invoice" header="False" menu="False"/>
+	    
+	    	<report auto="False" id="sale.report_sale_order" model="sale.order" name="sale.order"
+                rml="sale/report/sale_order.rml" string="Quotation / Order"
+                usage="default" menu="False"/>
+                
+                
+           <report auto="False" id="purchase.report_purchase_quotation" model="purchase.order" 
+                name="purchase.quotation" rml="purchase/report/request_quotation.rml"
+                string="Request for Quotation" menu="False"/>
+	        <report auto="False" id="purchase.report_purchase_order" model="purchase.order"
+	                name="purchase.order" rml="purchase/report/order.rml"
+	                usage="default" string="Purchase Order" menu="False"/>
+	                
+	        <report
+            auto="False"
+            id="account.account_invoices"
+            model="account.invoice"
+            name="account.invoice"
+            rml="account/report/account_print_invoice.rml"
+            string="Invoices"
+            attachment="(object.state in ('open','paid')) and ('INV'+(object.number or '').replace('/','')+'.pdf')"
+            usage="default"
+            multi="True" menu="False"/>
+	    
+    </data>
+</openerp>

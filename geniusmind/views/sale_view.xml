@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    
+
+    
+	<record id="view_order_form_inherit_genius_1" model="ir.ui.view">
+	            <field name="name">sale.order.form</field>
+	            <field name="model">sale.order</field>
+	            <field name="type">form</field>
+	            <field name="inherit_id" ref="sale.view_order_form"/>
+	            <field name="arch" type="xml">
+	            	<data>
+		            	<xpath expr="//notebook" position="inside">
+		            		<separator string="Printed Notes" colspan="4"/>
+		            		<field colspan="4" name="printed_note" nolabel="1"/>
+		            	</xpath>
+		            	
+		            	<field name='company_id' position="after">
+		            		<separator string="Purchase Order" colspan="4"/>
+		            		<field  name="pur_number" />
+		            		<field  name="pur_date" />
+		            	</field>
+
+						
+			          <xpath expr="/form/header" position="inside">
+		            		<button name="%(genius_sale_order_id)d" string="Print Order" type="action" icon="gtk-print" states="waiting_date,manual,progress,done,shipping_except,invoice_except"/>
+		            		<button name="%(geniusmind.act_sale_order_mail)d" string="Send Mail" type="action" icon="gtk-print" states="waiting_date,manual,progress,done,shipping_except,invoice_except"/>
+		            	</xpath>
+		            	
+		            	<xpath expr="/form/header" position="inside">
+		            		<button name="%(genius_sale_quotation_id)d" string="Print Quotation" type="action" icon="gtk-print" states="draft"/>
+		            		<button name="%(geniusmind.act_sale_order_quotation_mail)d" string="Send Mail" type="action" icon="gtk-print" states="draft"/>
+		            	</xpath>
+	            	</data>
+	            </field>
+	        </record>
+	    
+    </data>
+</openerp>

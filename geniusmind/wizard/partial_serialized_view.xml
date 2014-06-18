@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    
+          <record id="stock_partial_move_form_inherit_genius_1" model="ir.ui.view">
+            <field name="name">stock.partial.move.form</field>
+            <field name="model">stock.partial.move</field>
+            <field name="inherit_id" ref="stock.stock_partial_move_form"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@string='_Validate']" position="replace">
+               		<button name="call_partial_serialized" string="_Validate" colspan="1" type="object" icon="gtk-go-forward" />
+                </xpath>
+            </field>
+	</record>
+	        <record id="partial_serialized_product_search_view" model="ir.ui.view">
+    			<field name="name">partial.serialized.product.search</field>
+    			<field name="model">partial.serialized.product</field>
+    			<field name="type">search</field>
+    			<field name="arch" type="xml">
+    				<search string="Serializing Products">
+    					<field name="name"/>
+    				</search>
+    			</field>
+    		</record>
+    
+    		<record id="partial_serialized_product_search_view" model="ir.ui.view">
+    			<field name="name">partial.serialized.product.search</field>
+    			<field name="model">partial.serialized.product</field>
+    			<field name="type">search</field>
+    			<field name="arch" type="xml">
+    				<search string="Serializing Products">
+    					<field name="name"/>
+    				</search>
+    			</field>
+    		</record>
+    		
+    		<record id="partial_serialized_product_form_view" model="ir.ui.view">
+    			<field name="name">partial.serialized.product.form</field>
+    			<field name="model">partial.serialized.product</field>
+    			<field name="type">form</field>
+    			<field name="arch" type="xml">
+    					<form string="Serializing Products">
+                                <field name="name" select="1" invisible="1"/>
+    					</form>
+    			</field>
+    		</record>
+    		
+    		<record id="partial_serialized_product_action" model="ir.actions.act_window">
+    			<field name="name">Serializing Product</field>
+    			<field name="res_model">partial.serialized.product</field>
+    			<field name="type">ir.actions.act_window</field>
+    			<field name="view_type">form</field>
+    			<field name="view_mode">form</field>
+    			<field name="view_id" ref="partial_serialized_product_form_view"/>
+<!--				<field name="search_view_id" ref="serialized_product_search_view"/>-->
+    		</record>
+    		
+    	<record id="partial_serialized_line_tree_view" model="ir.ui.view">
+            <field name="name">partial.serialized.line.tree</field>
+            <field name="model">partial.serialized.line</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree editable="top" string="Product Moves">
+                    <field name="serial_no"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="partial_serialized_line_form_view" model="ir.ui.view">
+            <field name="name">partial.serialized.line.form</field>
+            <field name="model">partial.serialized.line</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="serial_no"/>
+                 </form>
+            </field>
+        </record>  
+    
+    </data>
+</openerp>

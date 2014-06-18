@@ -1,0 +1,111 @@
+<?xml version="1.0" ?>
+<openerp>
+	<data noupdate="1">
+<!-- 	
+		<record id="account_journal_retailsalejournaldelhi" model="account.journal">
+			<field model="account.account" name="default_debit_account_id" search="[('name', '=', u'Sales Account')]"/>
+			<field eval="[(6,0,[])]" name="groups_id"/>
+			<field eval="1" name="update_posted"/>
+			<field name="code">I-DEL</field>
+			<field name="user_id" ref="base.user_admin"/>
+			<field name="name">Retail Invoice Delhi</field>
+			<field eval="0" name="centralisation"/>
+			<field name="view_id" ref="account.account_sp_journal_view"/>
+			<field name="company_id" ref="base.main_company"/>
+			<field eval="[(6,0,[])]" name="type_control_ids"/>
+			<field model="account.account" name="default_credit_account_id" search="[('name', '=', u'Sales Account')]"/>
+			<field model="ir.sequence" name="sequence_id" search="[('name', '=', u'Retail Invoice Delhi')]"/>
+			<field eval="[(6,0,[])]" name="account_control_ids"/>
+			<field eval="0" name="allow_date"/>
+			<field eval="0" name="entry_posted"/>
+			<field name="type">sale</field>
+			<field eval="0" name="group_invoice_lines"/>
+		</record>
+		
+		<record id="account_journal_retailsalejournalblr" model="account.journal">
+			<field model="account.account" name="default_debit_account_id" search="[('name', '=', u'Sales Account')]"/>
+			<field eval="[(6,0,[])]" name="groups_id"/>
+			<field eval="1" name="update_posted"/>
+			<field name="code">I-BLR</field>
+			<field name="user_id" ref="base.user_admin"/>
+			<field name="name">Retail Invoice Bangalore</field>
+			<field eval="0" name="centralisation"/>
+			<field name="view_id" ref="account.account_sp_journal_view"/>
+			<field name="company_id" ref="base.main_company"/>
+			<field eval="[(6,0,[])]" name="type_control_ids"/>
+			<field model="account.account" name="default_credit_account_id" search="[('name', '=', u'Sales Account')]"/>
+			<field model="ir.sequence" name="sequence_id" search="[('name', '=', u'Retail Invoice Bangalore')]"/>
+			<field eval="[(6,0,[])]" name="account_control_ids"/>
+			<field eval="0" name="allow_date"/>
+			<field eval="0" name="entry_posted"/>
+			<field name="type">sale</field>
+			<field eval="0" name="group_invoice_lines"/>
+		</record>
+	
+		<record id="account_journal_taxsalejournaldelhi" model="account.journal">
+			<field model="account.account" name="default_debit_account_id" search="[('name', '=', u'Sales Account')]"/>
+			<field eval="[(6,0,[])]" name="groups_id"/>
+			<field eval="1" name="update_posted"/>
+			<field name="code">TI-DEL</field>
+			<field name="user_id" ref="base.user_admin"/>
+			<field name="name">Tax Invoice Delhi</field>
+			<field eval="0" name="centralisation"/>
+			<field name="view_id" ref="account.account_sp_journal_view"/>
+			<field name="company_id" ref="base.main_company"/>
+			<field eval="[(6,0,[])]" name="type_control_ids"/>
+			<field model="account.account" name="default_credit_account_id" search="[('name', '=', u'Sales Account')]"/>
+			<field model="ir.sequence" name="sequence_id" search="[('name', '=', u'Tax Invoice Delhi')]"/>
+			<field eval="[(6,0,[])]" name="account_control_ids"/>
+			<field eval="0" name="allow_date"/>
+			<field eval="0" name="entry_posted"/>
+			<field name="type">sale</field>
+			<field eval="0" name="group_invoice_lines"/>
+		</record>
+		
+		<record id="account_journal_taxsalejournalblr" model="account.journal">
+			<field model="account.account" name="default_debit_account_id" search="[('name', '=', u'Sales Account')]"/>
+			<field eval="[(6,0,[])]" name="groups_id"/>
+			<field eval="1" name="update_posted"/>
+			<field name="code">TI-BLR</field>
+			<field name="user_id" ref="base.user_admin"/>
+			<field name="name">Tax Invoice Banglore</field>
+			<field eval="0" name="centralisation"/>
+			<field name="view_id" ref="account.account_sp_journal_view"/>
+			<field name="company_id" ref="base.main_company"/>
+			<field eval="[(6,0,[])]" name="type_control_ids"/>
+			<field model="account.account" name="default_credit_account_id" search="[('name', '=', u'Sales Account')]"/>
+			<field model="ir.sequence" name="sequence_id" search="[('name', '=', u'Tax Invoice Bangalore')]"/>
+			<field eval="[(6,0,[])]" name="account_control_ids"/>
+			<field eval="0" name="allow_date"/>
+			<field eval="0" name="entry_posted"/>
+			<field name="type">sale</field>
+			<field eval="0" name="group_invoice_lines"/>
+		</record>
+		
+		
+		<record id="retial_type_invoice_delhi" model="type.invoice">
+			<field name="name">Retail Invoice Delhi</field>
+			<field name="report">Retail Invoice Delhi</field>
+			<field name="journal_id" ref="geniusmind.account_journal_retailsalejournaldelhi"/>
+		</record>
+		
+		<record id="retial_type_invoice_blr" model="type.invoice">
+			<field name="name">Retail Invoice Bangalore</field>
+			<field name="report">Retail Invoice Bangalore</field>
+			<field name="journal_id" ref="geniusmind.account_journal_retailsalejournalblr"/>
+		</record>
+		
+		<record id="tax_type_invoice_delhi" model="type.invoice">
+			<field name="name">Tax Invoice Delhi</field>
+			<field name="report">Tax Invoice Delhi</field>
+			<field name="journal_id" ref="geniusmind.account_journal_taxsalejournaldelhi"/>
+		</record>
+		
+		<record id="tax_type_invoice_blr" model="type.invoice">
+			<field name="name">Tax Invoice Bangalore</field>
+			<field name="report">Tax Invoice Bangalore</field>
+			<field name="journal_id" ref="geniusmind.account_journal_taxsalejournalblr"/>
+		</record>
+		 -->
+	</data>
+</openerp>
