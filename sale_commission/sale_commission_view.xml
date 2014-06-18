@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+            <record id="view_sale_commission" model="ir.ui.view">
+            <field name="name">sale.commission.search</field>
+            <field name="model">sale.commission</field>
+            <field name="arch" type="xml">
+                <search string="Sale Commission">
+                    <field name="user_id" />
+                    <group expand="0" string="Group By...">
+                        <filter string="Sales Person" icon="terp-personal+" domain="[]" context="{'group_by':'user_id'}"/>
+                    </group>
+                </search>
+             </field>
+         </record>
+            <record model="ir.ui.view" id="sale_commission_tree_view">
+                <field name="name">sale.commission.tree</field>
+                <field name="model">sale.commission</field>
+                <field name="type">tree</field>
+                <field name="arch" type="xml">
+                    <tree string="Sale Commision">
+                        <field name="user_id"/>
+                    </tree>
+                </field>
+            </record>
+            
+            <record model="ir.ui.view" id="sale_commission_line_tree_view">
+                <field name="name">sale.commission.line.tree</field>
+                <field name="model">sale.commission.line</field>
+                <field name="type">tree</field>
+                <field name="arch" type="xml">
+                    <tree string="Sale Commision Line">
+                        <field name="account_ref"/>
+                        <field name="account_name"/>
+                        <field name="invoice_number"/>
+                        <field name="invoice_type"/>
+                        <field name="related_document"/>
+                        <field name="invoice_date"/>
+                        <field name="statement_date"/>
+                        <field name="recovery_days"/>
+                        <field name="cost"/>
+                        <field name="retail"/>
+                        <field name="vat"/>
+                        <field name="gross_profit"/>
+                        <field name="payment_type"/>
+                        <field name="bank_charge"/>
+                        <field name="transport_cost"/>
+                        <field name="net_profit"/>
+                        <field name="comission_payable"/>
+                        <field name="payment_late_by"/>
+                    </tree>
+                </field>
+            </record>
+            
+            <record model="ir.ui.view" id="sale_commission_form_view">
+                <field name="name">sale.commission.form</field>
+                <field name="model">sale.commission</field>
+                <field name="type">form</field>
+                <field name="arch" type="xml">
+                    <form string="Sale Commision" version="7.0">
+                    	<div>
+                    		<h1>
+                        <field name="user_id"/>
+                        </h1>
+                        </div>
+                        <field name="line_ids"/>
+                    </form>
+                </field>
+            </record>
+
+            <record model="ir.actions.act_window" id="action_sale_commision">
+                <field name="name">Sale Commission</field>
+                <field name="type">ir.actions.act_window</field>
+                <field name="res_model">sale.commission</field>
+                <field name="view_type">form</field>
+                <field name="view_mode">tree,form</field>
+                <field name="view_id" ref="sale_commission_tree_view"/>
+            </record>
+
+          <menuitem id="sale_commission_menu" name="Sale Commission" parent="base.menu_invoiced" action="action_sale_commision"/>
+    </data>
+</openerp>
